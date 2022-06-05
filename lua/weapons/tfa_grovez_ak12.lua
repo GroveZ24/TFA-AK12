@@ -264,8 +264,8 @@ SWEP.EjectionSmokeEnabled = true -- Disable automatic ejection smoke
 --Shell eject override
 SWEP.LuaShellEject = true -- Enable shell ejection through lua?
 SWEP.LuaShellEjectDelay = 0 -- The delay to actually eject things
-SWEP.LuaShellModel = nil -- The model to use for ejected shells
-SWEP.LuaShellScale = 0.4 -- The model scale to use for ejected shells
+SWEP.LuaShellModel = "models/weapons/tfa_grovez/ak12/shell/545x39_shell.mdl" -- The model to use for ejected shells
+SWEP.LuaShellScale = 0.5 -- The model scale to use for ejected shells
 SWEP.LuaShellYaw = nil -- The model yaw rotation ( relative ) to use for ejected shells
 -- Tracer Stuff
 SWEP.TracerName = nil -- Change to a string of your tracer name
