@@ -258,7 +258,7 @@ SWEP.CameraAttachmentScale = 5
 SWEP.MuzzleFlashEnabled = true -- Enable muzzle flash
 SWEP.MuzzleAttachmentRaw = nil -- This will override whatever string you gave. This is the raw attachment NUMBER. This is overridden or created when a gun makes a muzzle event
 SWEP.AutoDetectMuzzleAttachment = false -- For multi-barrel weapons, detect the proper attachment?
-SWEP.MuzzleFlashEffect = "tfa_muzzleflash_ak12" -- Change to a string of your muzzle flash effect.  Copy/paste one of the existing from the base
+SWEP.MuzzleFlashEffect = "ayykyu_muzzleflash_ak12" -- Change to a string of your muzzle flash effect.  Copy/paste one of the existing from the base
 SWEP.SmokeParticle = nil -- Smoke particle (ID within the PCF), defaults to something else based on holdtype; "" to disable
 SWEP.EjectionSmokeEnabled = true -- Disable automatic ejection smoke
 --Shell eject override
