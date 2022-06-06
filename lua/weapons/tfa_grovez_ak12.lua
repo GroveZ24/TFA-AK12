@@ -348,10 +348,10 @@ SWEP.EventTable = {
 		{time = 0, type = "sound", value = Sound("TFA_GROVEZ.AK12.HolsterRattle")}
 	},
 	["ak12_sprint_in"] = {
-		{time = 0, type = "sound", value = Sound("TFA_GROVEZ.AK12.SprintIn")}
+		--{time = 0, type = "sound", value = Sound("TFA_GROVEZ.AK12.SprintIn")}
 	},
 	["ak12_sprint_out"] = {
-		{time = 0, type = "sound", value = Sound("TFA_GROVEZ.AK12.SprintOut")}
+		--{time = 0, type = "sound", value = Sound("TFA_GROVEZ.AK12.SprintOut")}
 	},
 	["ak12_reload"] = {
 		{time = 0, type = "lua", value = SWEP.AK12_Mag2_Update},
@@ -415,14 +415,40 @@ SWEP.VElements = {
 		bone = "mod_scope_reticle",
 		pos = Vector(0, 2.5, 0),
 		angle = Angle(180, 0, -90),
-		size = 0.35, -- 0.2,
+		size = 0.35,
+		draw_func_outer = DrawSingleReticle(),
+		active = false
+	},
+	["scope_uh1"] = {
+		type = "Model", 
+		model = "models/weapons/tfa_grovez/mods/scopes/uh1/model.mdl", 
+		bone = "tag_weapon", 
+		rel = "", 
+		pos = Vector(-0.055, 4.75, 4.73), 
+		angle = Angle(0, -90, 0), 
+		size = Vector(1.05, 1.05, 1.05), 
+		color = Color(255, 255, 255, 255), 
+		surpresslightning = false, 
+		material = "", 
+		skin = 0, 
+		bodygroup = {}, 
+		active = false, 
+		bonemerge = false
+	},
+	["scope_uh1_lens"] = {
+		type = "Quad",
+		rel = "scope_uh1",
+		bone = "mod_scope_reticle",
+		pos = Vector(0, 2.5, 0),
+		angle = Angle(180, 0, -90),
+		size = 0.25,
 		draw_func_outer = DrawSingleReticle(),
 		active = false
 	}
 }
 ----[[ATTACHMENTS]]----
 SWEP.Attachments = {
-	[1] = {atts = {"grovez_sight_pk120"}},
+	[1] = {atts = {"grovez_sight_pk120", "grovez_sight_uh1"}},
 	[99] = {atts = {"grovez_ak12_skin1", "grovez_ak12_skin2"}},
 }
 SWEP.AttachmentDependencies = {}
