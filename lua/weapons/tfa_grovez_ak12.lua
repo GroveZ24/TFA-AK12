@@ -288,34 +288,34 @@ SWEP.LaserDistance = 10000
 ----[[EVENT TABLE]]----
 function SWEP:AK12_Mag1_Update(vm)
 	if self:Clip1() <= 1 then
-		self.Bodygroups_V[17] = 0
+		self.Bodygroups_V[12] = 0
 	elseif self:Clip1() == 2 then
-		self.Bodygroups_V[17] = 1
+		self.Bodygroups_V[12] = 1
 	elseif self:Clip1() == 3 then
-		self.Bodygroups_V[17] = 2
+		self.Bodygroups_V[12] = 2
 	elseif self:Clip1() >= 4 then
-		self.Bodygroups_V[17] = 3
+		self.Bodygroups_V[12] = 3
 	end
 end
 
 function SWEP:AK12_Mag2_Update(vm)
 	if self:Clip1() <= 1 then
-		self.Bodygroups_V[16] = 0
+		self.Bodygroups_V[11] = 0
 	elseif self:Clip1() == 2 then
-		self.Bodygroups_V[16] = 1
+		self.Bodygroups_V[11] = 1
 	elseif self:Clip1() == 3 then
-		self.Bodygroups_V[16] = 2
+		self.Bodygroups_V[11] = 2
 	elseif self:Clip1() >= 4 then
-		self.Bodygroups_V[16] = 3
+		self.Bodygroups_V[11] = 3
 	end
 end
 
 function SWEP:AK12_Mag1_Full(vm)
-	self.Bodygroups_V[17] = 3
+	self.Bodygroups_V[12] = 3
 end
 
 function SWEP:AK12_Mag2_Full(vm)
-	self.Bodygroups_V[16] = 3
+	self.Bodygroups_V[11] = 3
 end
 
 SWEP.EventTable = {
@@ -449,6 +449,7 @@ SWEP.VElements = {
 ----[[ATTACHMENTS]]----
 SWEP.Attachments = {
 	[1] = {atts = {"grovez_sight_pk120", "grovez_sight_uh1"}},
+	[2] = {atts = {"grovez_ak_stock_ak_evo"}},
 	[99] = {atts = {"grovez_ak12_skin1", "grovez_ak12_skin2"}},
 }
 SWEP.AttachmentDependencies = {}

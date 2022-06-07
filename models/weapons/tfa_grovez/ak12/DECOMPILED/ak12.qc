@@ -12,26 +12,6 @@ $bodygroup "Body"
 {
 	studio "AK12_Body.smd"
 }
-$bodygroup "Bolt1"
-{
-	studio "AK12_Bolt1.smd"
-}
-$bodygroup "Bolt2"
-{
-	studio "AK12_Bolt2.smd"
-}
-$bodygroup "Magrel"
-{
-	studio "AK12_Magrel.smd"
-}
-$bodygroup "Selector"
-{
-	studio "AK12_Selector.smd"
-}
-$bodygroup "Trigger"
-{
-	studio "AK12_Trigger.smd"
-}
 $bodygroup "Dustcover"
 {
 	studio "AK12_Dustcover.smd"
@@ -45,6 +25,7 @@ $bodygroup "Sight"
 $bodygroup "Tube"
 {
 	studio "AK12_Tube.smd"
+	studio "AK12_Stock_EVO.smd"
 	blank
 }
 $bodygroup "Stock"
