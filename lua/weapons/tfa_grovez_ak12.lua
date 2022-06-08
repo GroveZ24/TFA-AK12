@@ -264,7 +264,7 @@ SWEP.EjectionSmokeEnabled = true -- Disable automatic ejection smoke
 --Shell eject override
 SWEP.LuaShellEject = true -- Enable shell ejection through lua?
 SWEP.LuaShellEjectDelay = 0 -- The delay to actually eject things
-SWEP.LuaShellModel = "models/weapons/tfa_grovez/ak12/shell/545x39_shell.mdl" -- The model to use for ejected shells
+SWEP.LuaShellModel = "models/weapons/tfa_grovez/shells/545x39/7n6/545x39_shell.mdl" -- The model to use for ejected shells
 SWEP.LuaShellScale = 0.5 -- The model scale to use for ejected shells
 SWEP.LuaShellYaw = nil -- The model yaw rotation ( relative ) to use for ejected shells
 -- Tracer Stuff
@@ -288,34 +288,34 @@ SWEP.LaserDistance = 10000
 ----[[EVENT TABLE]]----
 function SWEP:AK12_Mag1_Update(vm)
 	if self:Clip1() <= 1 then
-		self.Bodygroups_V[12] = 0
+		self.Bodygroups_V[2] = 0
 	elseif self:Clip1() == 2 then
-		self.Bodygroups_V[12] = 1
+		self.Bodygroups_V[2] = 1
 	elseif self:Clip1() == 3 then
-		self.Bodygroups_V[12] = 2
+		self.Bodygroups_V[2] = 2
 	elseif self:Clip1() >= 4 then
-		self.Bodygroups_V[12] = 3
+		self.Bodygroups_V[2] = 3
 	end
 end
 
 function SWEP:AK12_Mag2_Update(vm)
 	if self:Clip1() <= 1 then
-		self.Bodygroups_V[11] = 0
+		self.Bodygroups_V[1] = 0
 	elseif self:Clip1() == 2 then
-		self.Bodygroups_V[11] = 1
+		self.Bodygroups_V[1] = 1
 	elseif self:Clip1() == 3 then
-		self.Bodygroups_V[11] = 2
+		self.Bodygroups_V[1] = 2
 	elseif self:Clip1() >= 4 then
-		self.Bodygroups_V[11] = 3
+		self.Bodygroups_V[1] = 3
 	end
 end
 
 function SWEP:AK12_Mag1_Full(vm)
-	self.Bodygroups_V[12] = 3
+	self.Bodygroups_V[2] = 3
 end
 
 function SWEP:AK12_Mag2_Full(vm)
-	self.Bodygroups_V[11] = 3
+	self.Bodygroups_V[1] = 3
 end
 
 SWEP.EventTable = {
@@ -419,12 +419,12 @@ SWEP.VElements = {
 		draw_func_outer = DrawSingleReticle(),
 		active = false
 	},
-	["scope_uh1"] = {
+	["scope_uh1_gen2"] = {
 		type = "Model", 
-		model = "models/weapons/tfa_grovez/mods/scopes/uh1/model.mdl", 
+		model = "models/weapons/tfa_grovez/mods/scopes/uh1_gen2/model.mdl", 
 		bone = "tag_weapon", 
 		rel = "", 
-		pos = Vector(-0.035, 4.5, 4.74), 
+		pos = Vector(-0.035, 4.1, 4.74), 
 		angle = Angle(0, -90, 0), 
 		size = Vector(1.025, 1.025, 1.025), 
 		color = Color(255, 255, 255, 255), 
@@ -435,9 +435,9 @@ SWEP.VElements = {
 		active = false, 
 		bonemerge = false
 	},
-	["scope_uh1_lens"] = {
+	["scope_uh1_gen2_lens"] = {
 		type = "Quad",
-		rel = "scope_uh1",
+		rel = "scope_uh1_gen2",
 		bone = "mod_scope_reticle",
 		pos = Vector(0, 5, 0),
 		angle = Angle(180, 0, -90),
@@ -448,8 +448,8 @@ SWEP.VElements = {
 }
 ----[[ATTACHMENTS]]----
 SWEP.Attachments = {
-	[1] = {atts = {"grovez_sight_pk120", "grovez_sight_uh1"}},
-	[2] = {atts = {"grovez_ak_stock_ak_evo"}},
+	[1] = {atts = {"grovez_sight_pk120", "grovez_sight_uh1_gen2"}},
+	[2] = {atts = {"grovez_stock_ak_evo"}},
 	[99] = {atts = {"grovez_ak12_skin1", "grovez_ak12_skin2"}},
 }
 SWEP.AttachmentDependencies = {}

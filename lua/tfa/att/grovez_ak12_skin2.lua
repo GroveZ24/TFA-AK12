@@ -9,10 +9,10 @@ ATTACHMENT.Description = {}
 
 ATTACHMENT.WeaponTable = {
 	["MaterialTable_V"] = {
-		[1] = "models/weapons/tfa_grovez/ak12/skin2/body",
-		[2] = "models/weapons/tfa_grovez/ak12/skin2/stock_evo",
-		[3] = "models/weapons/tfa_grovez/ak12/skin2/stock",
-		[5] = "models/weapons/tfa_grovez/ak12/skin2/magazine"
+		[1] = "models/weapons/tfa_grovez/ak12/skin2/AK12_Body",
+		[2] = "models/weapons/tfa_grovez/ak12/skin2/AK12_Magazine",
+		[4] = "models/weapons/tfa_grovez/ak12/skin2/AK12_Stock",
+		[5] = "models/weapons/tfa_grovez/ak12/skin2/AK12_Stock_EVO"
 	}
 }
 

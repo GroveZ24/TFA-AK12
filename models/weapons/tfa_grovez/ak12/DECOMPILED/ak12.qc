@@ -7,10 +7,50 @@
 //MODELNAME
 $modelname "weapons\tfa_grovez\ak12\c_ak12.mdl"
 
+//MODEL
+$model "Weapon" "AK12_Body.smd"
+
 //BODYGROUPS
-$bodygroup "Body"
+$bodygroup "Mag1_Ammo"
 {
-	studio "AK12_Body.smd"
+	studio "AK12_Mag1_Ammo_0.smd"
+	studio "AK12_Mag1_Ammo_1.smd"
+	studio "AK12_Mag1_Ammo_2.smd"
+	studio "AK12_Mag1_Ammo_3.smd"
+}
+$bodygroup "Mag2_Ammo"
+{
+	studio "AK12_Mag2_Ammo_0.smd"
+	studio "AK12_Mag2_Ammo_1.smd"
+	studio "AK12_Mag2_Ammo_2.smd"
+	studio "AK12_Mag2_Ammo_3.smd"
+}
+$bodygroup "Mag1"
+{
+	studio "AK12_Mag1_Default.smd"
+}
+$bodygroup "Mag2"
+{
+	studio "AK12_Mag2_Default.smd"
+}
+$bodygroup "Handguard"
+{
+	studio "AK12_Handguard_Default.smd"
+}
+$bodygroup "Pistolgrip"
+{
+	studio "AK12_Pistolgrip_Default.smd"
+}
+$bodygroup "Stock_01"
+{
+	studio "AK12_Tube.smd"
+	studio "AK12_Stock_EVO.smd"
+	blank
+}
+$bodygroup "Stock_02"
+{
+	studio "AK12_Stock_Default.smd"
+	blank
 }
 $bodygroup "Dustcover"
 {
@@ -22,56 +62,10 @@ $bodygroup "Sight"
 	studio "AK12_Sight.smd"
 	blank
 }
-$bodygroup "Tube"
-{
-	studio "AK12_Tube.smd"
-	studio "AK12_Stock_EVO.smd"
-	blank
-}
-$bodygroup "Stock"
-{
-	studio "AK12_Stock_Default.smd"
-	blank
-}
-$bodygroup "Pistolgrip"
-{
-	studio "AK12_Pistolgrip_Default.smd"
-}
-$bodygroup "Handguard"
-{
-	studio "AK12_Handguard_Default.smd"
-}
-$bodygroup "Rail_Right"
-{
-	studio "AK12_Rail_Right.smd"
-	blank
-}
 $bodygroup "Muzzle"
 {
 	studio "AK12_Muzzle_Default.smd"
 	blank
-}
-$bodygroup "Mag1"
-{
-	studio "AK12_Mag1_Default.smd"
-}
-$bodygroup "Mag2"
-{
-	studio "AK12_Mag2_Default.smd"
-}
-$bodygroup "Mag1_Ammo"
-{
-	studio "AK12_Mag1_Default_Ammo_0.smd"
-	studio "AK12_Mag1_Default_Ammo_1.smd"
-	studio "AK12_Mag1_Default_Ammo_2.smd"
-	studio "AK12_Mag1_Default_Ammo_3.smd"
-}
-$bodygroup "Mag2_Ammo"
-{
-	studio "AK12_Mag2_Default_Ammo_0.smd"
-	studio "AK12_Mag2_Default_Ammo_1.smd"
-	studio "AK12_Mag2_Default_Ammo_2.smd"
-	studio "AK12_Mag2_Default_Ammo_3.smd"
 }
 
 //ZALOOPA
@@ -81,9 +75,10 @@ $illumposition 0 0 0
 
 //CDMATERIALS
 $cdmaterials "models\weapons\tfa_grovez\ak12\"
+$cdmaterials "models\weapons\tfa_grovez\ammo\545x39\"
 
 //ATTACHMENTS
-$attachment "1" "muzzle" 0 2.5 -0.25 rotate 0 90 180
+$attachment "1" "muzzle" 0 3.1 -0.3 rotate 0 90 180
 $attachment "2" "shell" 0 0 0 rotate 0 90 -90
 $attachment "3" "camera" 0 0 0 rotate -90 0 -90
 
