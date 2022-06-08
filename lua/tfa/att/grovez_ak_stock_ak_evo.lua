@@ -12,7 +12,10 @@ ATTACHMENT.WeaponTable = {
 		["Tube"] = 1,
 		["Stock"] = 1
 	}
-} -- No stats????
+}
+
+ATTACHMENT.AttachSound = "TFA_GROVEZ.SHARED.MENU_MOD_SELECT"
+ATTACHMENT.DetachSound = "TFA_GROVEZ.SHARED.MENU_MOD_DESELECT"
 
 if not TFA_ATTACHMENT_ISUPDATING then
 	TFAUpdateAttachments()
