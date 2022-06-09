@@ -273,18 +273,17 @@ SWEP.TracerCount = 1 -- 0 disables, otherwise, 1 in X chance
 --Impact Effects
 SWEP.ImpactEffect = nil -- Impact Effect
 SWEP.ImpactDecal = nil -- Impact Decal
---[[
 ----[[FLASHLIGHT]]----
+SWEP.HasFlashlight = false
 SWEP.FlashlightAttachment = 0
 SWEP.FlashlightDistance = 0
 SWEP.FlashlightBrightness = 0
 SWEP.FlashlightFOV = 0
 SWEP.FlashlightSoundToggleOn = Sound("")
 SWEP.FlashlightSoundToggleOff = Sound("")
-SWEP.FlashlightMaterial = "effects/eft_base/flashlight_01"
+SWEP.FlashlightMaterial = "effects/flashlight001"
 ----[[LASER]]----
-SWEP.LaserDistance = 10000
---]]
+--SWEP.LaserDistance = 10000
 ----[[EVENT TABLE]]----
 function SWEP:AK12_Mag1_Update(vm)
 	if self:Clip1() <= 1 then
@@ -393,9 +392,10 @@ SWEP.Akimbo = false -- Akimbo gun?  Alternates between primary and secondary att
 SWEP.AkimboHUD = false -- Draw holographic HUD for both weapons?
 ----[[VIEWMODELELEMENTS]]----
 SWEP.VElements = {
+	----[[SCOPES]]----
 	["scope_pk120"] = {
 		type = "Model", 
-		model = "models/weapons/tfa_grovez/mods/scopes/pk120/model.mdl", 
+		model = "models/weapons/tfa_grovez/mods/scopes/scope_pk120/model.mdl", 
 		bone = "tag_weapon", 
 		rel = "", 
 		pos = Vector(-0.03, 4.1, 4.74), 
@@ -421,7 +421,7 @@ SWEP.VElements = {
 	},
 	["scope_uh1_gen2"] = {
 		type = "Model", 
-		model = "models/weapons/tfa_grovez/mods/scopes/uh1_gen2/model.mdl", 
+		model = "models/weapons/tfa_grovez/mods/scopes/scope_uh1_gen2/model.mdl", 
 		bone = "tag_weapon", 
 		rel = "", 
 		pos = Vector(-0.035, 4.1, 4.74), 
@@ -444,16 +444,55 @@ SWEP.VElements = {
 		size = 0.35,
 		draw_func_outer = DrawSingleReticle(),
 		active = false
-	}
+	},
+	----[[TOP_RAIL]]----
+	["flashlight_m300c_thorntail"] = {
+		type = "Model", 
+		model = "models/weapons/tfa_grovez/mods/tactical/flashlight_surefire_m300c/model.mdl", 
+		bone = "tag_weapon", 
+		rel = "", 
+		pos = Vector(-0.035, 11, 4.74), 
+		angle = Angle(0, 90, 0), 
+		size = Vector(1.05, 1.05, 1.05), 
+		color = Color(255, 255, 255, 255), 
+		surpresslightning = false, 
+		material = "", 
+		skin = 0, 
+		bodygroup = {[0] = 1}, 
+		active = false, 
+		bonemerge = false
+	},
+	----[[RIGHT_RAIL]]----
+	["flashlight_m300c_scout"] = {
+		type = "Model", 
+		model = "models/weapons/tfa_grovez/mods/tactical/flashlight_surefire_m300c/model.mdl", 
+		bone = "tag_weapon", 
+		rel = "", 
+		pos = Vector(-1.0, 13.68, 3.8), 
+		angle = Angle(0, 90, -90), 
+		size = Vector(1.05, 1.05, 1.05), 
+		color = Color(255, 255, 255, 255), 
+		surpresslightning = false, 
+		material = "", 
+		skin = 0, 
+		bodygroup = {[0] = 0}, 
+		active = false, 
+		bonemerge = false
+	},
 }
 ----[[ATTACHMENTS]]----
 SWEP.Attachments = {
-	[1] = {atts = {"grovez_sight_pk120", "grovez_sight_uh1_gen2"}},
-	[2] = {atts = {"grovez_stock_ak_evo"}},
-	[99] = {atts = {"grovez_ak12_skin1", "grovez_ak12_skin2"}},
+	[1] = {atts = {"grovez_scope_pk120", "grovez_scope_uh1_gen2"}}, -- Scopes
+	[2] = {atts = {"grovez_flashlight_surefire_m300c_thorntail"}}, -- Top Rail
+	[3] = {atts = {"grovez_flashlight_surefire_m300c_scout"}}, -- Right Rail
+	[4] = {atts = {"grovez_stock_ak_evo"}}, -- Stocks
+	[99] = {atts = {"grovez_ak12_skin1", "grovez_ak12_skin2"}} -- Skins
 }
 SWEP.AttachmentDependencies = {}
-SWEP.AttachmentExclusions = {}
+SWEP.AttachmentExclusions = {
+	["grovez_flashlight_surefire_m300c_thorntail"] = {"grovez_flashlight_surefire_m300c_scout"},
+	["grovez_flashlight_surefire_m300c_scout"] = {"grovez_flashlight_surefire_m300c_thorntail"}
+}
 SWEP.AttachmentTableOverride = {}
 SWEP.AttachmentIconOverride = {}
 
