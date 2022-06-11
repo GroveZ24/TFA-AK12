@@ -413,9 +413,9 @@ SWEP.VElements = {
 		type = "Quad",
 		rel = "scope_pk120",
 		bone = "mod_scope_reticle",
-		pos = Vector(0, 5, 0),
+		pos = Vector(0, 7.5, 0),
 		angle = Angle(180, 0, -90),
-		size = 0.4,
+		size = 0.45,
 		draw_func_outer = DrawSingleReticle(),
 		active = false
 	},
@@ -439,9 +439,9 @@ SWEP.VElements = {
 		type = "Quad",
 		rel = "scope_uh1_gen2",
 		bone = "mod_scope_reticle",
-		pos = Vector(0, 5, 0),
+		pos = Vector(0, 7.5, 0),
 		angle = Angle(180, 0, -90),
-		size = 0.35,
+		size = 0.4,
 		draw_func_outer = DrawSingleReticle(),
 		active = false
 	},
