@@ -111,8 +111,12 @@ SWEP.Primary.KickUp = 0.275 -- This is the maximum upwards recoil (rise)
 SWEP.Primary.KickDown = 0.225 -- This is the maximum downwards recoil (skeet)
 SWEP.Primary.KickHorizontal = 0.175 -- This is the maximum sideways recoil (no real term)
 SWEP.Primary.StaticRecoilFactor = 0.5 -- Amount of recoil to directly apply to EyeAngles
---Multiplier
+--Multipliers
 SWEP.IronRecoilMultiplier = 0.95
+SWEP.CrouchRecoilMultiplier = 0.9
+SWEP.JumpRecoilMultiplier = 2
+SWEP.WallRecoilMultiplier = 2
+SWEP.ChangeStateRecoilMultiplier = 2
 ----[[ACCURACY]]----
 SWEP.Primary.Spread = .025 -- This is hip-fire acuracy. Less is more (1 is horribly awful, .0001 is close to perfect)
 SWEP.Primary.IronAccuracy = .0075 -- Ironsight accuracy, should be the same for shotguns
@@ -122,8 +126,11 @@ SWEP.Primary.SpreadMultiplierMax = 3 -- How far the spread can expand when you s
 SWEP.Primary.SpreadIncrement = 1.5 -- What percentage of the modifier is added on, per shot
 SWEP.Primary.SpreadRecovery = 12 -- How much the spread recovers, per second
 SWEP.Primary.SpreadRecoveryDelay = 0 -- Delay in seconds before spread starts to recover
---Multiplier
+--Multipliers
 SWEP.CrouchAccuracyMultiplier = 0.75
+SWEP.ChangeStateAccuracyMultiplier = 2.5
+SWEP.JumpAccuracyMultiplier = 15
+SWEP.WalkAccuracyMultiplier = 2.5
 ----[[RANGE]]----
 SWEP.DisplayFalloff = nil
 SWEP.Primary.RangeFalloffLUT = {
@@ -182,6 +189,7 @@ SWEP.Bodygroups_V = {}
 SWEP.AllowIronSightsDoF = true
 SWEP.IronSightsReloadEnabled = true
 SWEP.IronSightsReloadLock = false
+SWEP.ToCrouchTime = 0.2
 ----[[IRON SIGHTS]]----
 --SWEP.Secondary.IronSightsEnabled = true
 SWEP.Secondary.IronFOV = 80 -- View FOV
