@@ -24,6 +24,7 @@ SWEP.Weight = 60
 SWEP.Type = "Rifle" -- "Pistol" "Machine Pistol" "Revolver" "Sub-Machine Gun" "Rifle" "Carbine" "Light Machine Gun" "Shotgun" "Designated Marksman Rifle" "Sniper Rifle" "Grenade" "Launcher"
 SWEP.Type_Displayed = "Assault Rifle"
 ----[[BASIC STATS]]----
+SWEP.FireBulletsFromBarrel = true
 SWEP.Primary.RPM = 700 -- This is in Rounds Per Minute / RPM
 SWEP.Primary.NumShots = 1 -- The number of shots the weapon fires
 SWEP.Primary.HullSize = 0 -- Big bullets, increase this value. They increase the hull size of the hitscan bullet
