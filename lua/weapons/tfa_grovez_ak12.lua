@@ -61,7 +61,7 @@ SWEP.IronInSound = Sound("TFA_GROVEZ.SHARED.ADS_RIFLE_IN") -- Sound to play when
 SWEP.IronOutSound = Sound("TFA_GROVEZ.SHARED.ADS_RIFLE_OUT") -- Sound to play when iron sighting out? nil for default
 SWEP.FireModeSound = Sound("TFA_GROVEZ.AK12.Selector")
 SWEP.Primary.Sound_DryFire = Sound("TFA_GROVEZ.SHARED.DRYFIRE_RIFLE")
-SWEP.Primary.Sound_DrySafety = Sound("")
+SWEP.Primary.Sound_DrySafety = Sound("TFA_GROVEZ.SHARED.BLANK")
 SWEP.Primary.Sound_Blocked = Sound("TFA_GROVEZ.SHARED.DRYFIRE_SHOTGUN")
 SWEP.Primary.Sound_Jammed = Sound("TFA_GROVEZ.SHARED.DRYFIRE_SHOTGUN")
 --Firstperson sounds
@@ -171,6 +171,9 @@ SWEP.IronSightsAng = Vector(-1.03, 0.207, 5.43)
 --Inspection position
 SWEP.InspectPos = Vector(10.877, -9.705, 3.171) - SWEP.VMPos
 SWEP.InspectAng = Vector(47.527, 50.993, 56.782)
+--Safety position
+SWEP.SafetyPos = Vector(0.522, -1.721, -3.036) - SWEP.VMPos
+SWEP.SafetyAng = Vector(-14.344, 37.99, -33.807)
 --Misc
 SWEP.VMPos_Additive = true
 SWEP.CenteredPos = nil -- The viewmodel positional offset, used for centering. Leave nil to autodetect using ironsights
