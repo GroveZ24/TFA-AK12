@@ -130,7 +130,7 @@ SWEP.Primary.SpreadRecoveryDelay = 0 -- Delay in seconds before spread starts to
 --Multipliers
 SWEP.CrouchAccuracyMultiplier = 0.75
 SWEP.ChangeStateAccuracyMultiplier = 2.5
-SWEP.JumpAccuracyMultiplier = 15
+SWEP.JumpAccuracyMultiplier = 5
 SWEP.WalkAccuracyMultiplier = 2.5
 ----[[RANGE]]----
 SWEP.DisplayFalloff = nil
