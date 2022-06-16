@@ -458,7 +458,7 @@ SWEP.VElements = {
 		active = false
 	},
 	----[[TOP_RAIL]]----
-	["flashlight_m300c_thorntail"] = {
+	["flashlight_m300c_thorntail_black"] = {
 		type = "Model", 
 		model = "models/weapons/tfa_grovez/mods/tactical/flashlight_surefire_m300c/model.mdl", 
 		bone = "tag_weapon", 
@@ -474,8 +474,24 @@ SWEP.VElements = {
 		active = false, 
 		bonemerge = false
 	},
+	["flashlight_m300c_thorntail_tan"] = {
+		type = "Model", 
+		model = "models/weapons/tfa_grovez/mods/tactical/flashlight_surefire_m300c/model.mdl", 
+		bone = "tag_weapon", 
+		rel = "", 
+		pos = Vector(-0.035, 11, 4.74), 
+		angle = Angle(0, 90, 0), 
+		size = Vector(1.05, 1.05, 1.05), 
+		color = Color(255, 255, 255, 255), 
+		surpresslightning = false, 
+		material = "", 
+		skin = 1, 
+		bodygroup = {[0] = 1}, 
+		active = false, 
+		bonemerge = false
+	},
 	----[[RIGHT_RAIL]]----
-	["flashlight_m300c_scout"] = {
+	["flashlight_m300c_scout_black"] = {
 		type = "Model", 
 		model = "models/weapons/tfa_grovez/mods/tactical/flashlight_surefire_m300c/model.mdl", 
 		bone = "tag_weapon", 
@@ -491,19 +507,35 @@ SWEP.VElements = {
 		active = false, 
 		bonemerge = false
 	},
+	["flashlight_m300c_scout_tan"] = {
+		type = "Model", 
+		model = "models/weapons/tfa_grovez/mods/tactical/flashlight_surefire_m300c/model.mdl", 
+		bone = "tag_weapon", 
+		rel = "", 
+		pos = Vector(-1.0, 13.68, 3.8), 
+		angle = Angle(0, 90, -90), 
+		size = Vector(1.05, 1.05, 1.05), 
+		color = Color(255, 255, 255, 255), 
+		surpresslightning = false, 
+		material = "", 
+		skin = 1, 
+		bodygroup = {[0] = 0}, 
+		active = false, 
+		bonemerge = false
+	},
 }
 ----[[ATTACHMENTS]]----
 SWEP.Attachments = {
 	[1] = {atts = {"grovez_scope_pk120", "grovez_scope_uh1_gen2"}}, -- Scopes
-	[2] = {atts = {"grovez_flashlight_surefire_m300c_thorntail"}}, -- Top Rail
-	[3] = {atts = {"grovez_flashlight_surefire_m300c_scout"}}, -- Right Rail
+	[2] = {atts = {"grovez_flashlight_surefire_m300c_thorntail_black", "grovez_flashlight_surefire_m300c_thorntail_tan"}}, -- Top Rail
+	[3] = {atts = {"grovez_flashlight_surefire_m300c_scout_black", "grovez_flashlight_surefire_m300c_scout_tan"}}, -- Right Rail
 	[4] = {atts = {"grovez_stock_ak_evo"}}, -- Stocks
 	[99] = {atts = {"grovez_ak12_skin1", "grovez_ak12_skin2"}} -- Skins
 }
 SWEP.AttachmentDependencies = {}
 SWEP.AttachmentExclusions = {
-	["grovez_flashlight_surefire_m300c_thorntail"] = {"grovez_flashlight_surefire_m300c_scout"},
-	["grovez_flashlight_surefire_m300c_scout"] = {"grovez_flashlight_surefire_m300c_thorntail"}
+	["grovez_flashlight_surefire_m300c_thorntail_black"] = {"grovez_flashlight_surefire_m300c_scout_black", "grovez_flashlight_surefire_m300c_scout_tan"},
+	["grovez_flashlight_surefire_m300c_thorntail_tan"] = {"grovez_flashlight_surefire_m300c_scout_black", "grovez_flashlight_surefire_m300c_scout_tan"},
 }
 SWEP.AttachmentTableOverride = {}
 SWEP.AttachmentIconOverride = {}
