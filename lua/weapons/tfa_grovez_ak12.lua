@@ -24,7 +24,7 @@ SWEP.Weight = 60
 SWEP.Type = "Rifle" -- "Pistol" "Machine Pistol" "Revolver" "Sub-Machine Gun" "Rifle" "Carbine" "Light Machine Gun" "Shotgun" "Designated Marksman Rifle" "Sniper Rifle" "Grenade" "Launcher"
 SWEP.Type_Displayed = "Assault Rifle"
 ----[[BASIC STATS]]----
-SWEP.FireBulletsFromBarrel = false
+--SWEP.FireBulletsFromBarrel = false
 SWEP.Primary.RPM = 700 -- This is in Rounds Per Minute / RPM
 SWEP.Primary.NumShots = 1 -- The number of shots the weapon fires
 SWEP.Primary.HullSize = 0 -- Big bullets, increase this value. They increase the hull size of the hitscan bullet
@@ -108,10 +108,10 @@ SWEP.Primary.Ammo = "ar2" -- "pistol" "357" "smg1" "ar2" "buckshot" "SniperPenet
 SWEP.Primary.AmmoConsumption = 1 -- Ammo consumed per shot
 SWEP.DisableChambering = false -- Disable round-in-the-chamber
 ----[[RECOIL]]----
-SWEP.Primary.KickUp = 1 * 0.275 -- This is the maximum upwards recoil (rise)
-SWEP.Primary.KickDown = 1 * 0.225 -- This is the maximum downwards recoil (skeet)
-SWEP.Primary.KickHorizontal = 1 * 0.175 -- This is the maximum sideways recoil (no real term)
-SWEP.Primary.StaticRecoilFactor = 1 * 0.5 -- Amount of recoil to directly apply to EyeAngles
+SWEP.Primary.KickUp = 0.275 -- This is the maximum upwards recoil (rise)
+SWEP.Primary.KickDown = 0.225 -- This is the maximum downwards recoil (skeet)
+SWEP.Primary.KickHorizontal = 0.175 -- This is the maximum sideways recoil (no real term)
+SWEP.Primary.StaticRecoilFactor = 0.5 -- Amount of recoil to directly apply to EyeAngles
 --Multipliers
 SWEP.IronRecoilMultiplier = 0.95
 SWEP.CrouchRecoilMultiplier = 0.9
