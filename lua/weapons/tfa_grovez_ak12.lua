@@ -129,7 +129,7 @@ SWEP.Primary.SpreadRecovery = 12 -- How much the spread recovers, per second
 SWEP.Primary.SpreadRecoveryDelay = 0 -- Delay in seconds before spread starts to recover
 --Multipliers
 SWEP.CrouchAccuracyMultiplier = 0.75
-SWEP.ChangeStateAccuracyMultiplier = 2.5
+SWEP.ChangeStateAccuracyMultiplier = 1.25
 SWEP.JumpAccuracyMultiplier = 5
 SWEP.WalkAccuracyMultiplier = 2.5
 ----[[RANGE]]----
@@ -195,6 +195,7 @@ SWEP.ToCrouchTime = 0.2
 --SWEP.Secondary.IronSightsEnabled = true
 SWEP.Secondary.IronFOV = 80 -- View FOV
 SWEP.IronViewModelFOV = 65 -- Viewmodel FOV
+SWEP.IronSightTime = 0.4
 ----[[WORLDMODEL]]----
 SWEP.WorldModel = "" -- Weapon world model path
 SWEP.Bodygroups_W = {}
