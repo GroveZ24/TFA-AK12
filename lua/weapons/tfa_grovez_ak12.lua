@@ -171,31 +171,33 @@ SWEP.VMAng = Vector(0, 0, 0)
 SWEP.RunSightsPos = Vector(0, 0, 0)
 SWEP.RunSightsAng = Vector(0, 0, 0)
 --Position when crouching
-SWEP.CrouchPos = Vector(-0.577, -1.121, -1.571) - SWEP.VMPos
+SWEP.CrouchPos = Vector(-0.577, -1.121, -1.571)
 SWEP.CrouchAng = Vector(0, 0, -6.027)
 --Position while aiming
-SWEP.IronSightsPos = Vector(-2.67, -1.5, 0.735) - SWEP.VMPos
-SWEP.IronSightsAng = Vector(-1.03, 0.207, 5.43)
+SWEP.IronSightsPos = Vector(-2.665, -1.5, 0.72)
+SWEP.IronSightsAng = Vector(-1.03235, 0.206872, 5.43371)
 --Inspection position
-SWEP.InspectPos = Vector(10.877, -9.705, 3.171) - SWEP.VMPos
+SWEP.InspectPos = Vector(10.877, -9.705, 3.171)
 SWEP.InspectAng = Vector(47.527, 50.993, 56.782)
 --Safety position
-SWEP.SafetyPos = Vector(0.522, -1.721, -3.036) - SWEP.VMPos
+SWEP.SafetyPos = Vector(0.522, -1.721, -3.036)
 SWEP.SafetyAng = Vector(-14.344, 37.99, -33.807)
 --Misc
-SWEP.VMPos_Additive = true
+SWEP.VMPos_Additive = false
 SWEP.CenteredPos = nil -- The viewmodel positional offset, used for centering. Leave nil to autodetect using ironsights
 SWEP.CenteredAng = nil -- The viewmodel angular offset, used for centering. Leave nil to autodetect using ironsights
 SWEP.Bodygroups_V = {}
 SWEP.AllowIronSightsDoF = true
 SWEP.IronSightsReloadEnabled = true
 SWEP.IronSightsReloadLock = false
-SWEP.ToCrouchTime = 0.2
+SWEP.ToCrouchTime = 0.3
 ----[[IRON SIGHTS]]----
---SWEP.Secondary.IronSightsEnabled = true
 SWEP.Secondary.IronFOV = 80 -- View FOV
 SWEP.IronViewModelFOV = 65 -- Viewmodel FOV
-SWEP.IronSightTime = 0.4
+SWEP.IronSightTime = 0.35
+--Offsets
+SWEP.SightOffset_PK120 = Vector(0.1225, 0, -1.54)
+SWEP.SightOffset_UH1_GEN2 = Vector(0.11, 0, -1.215)
 ----[[WORLDMODEL]]----
 SWEP.WorldModel = "" -- Weapon world model path
 SWEP.Bodygroups_W = {}
@@ -264,9 +266,10 @@ SWEP.SequenceRateOverride = {
 }
 ----[[EFFECTS]]----
 --Attachments
-SWEP.MuzzleAttachment = 1
-SWEP.ShellAttachment = 2
-SWEP.CameraAttachment = 3
+SWEP.MuzzleAttachment = "ATT_MUZZLEFLAH"
+SWEP.MuzzleAttachmentSuppressed = "ATT_MUZZLEFLAH_SUPPRESSED"
+SWEP.ShellAttachment = "ATT_SHELL_EJECTION_PORT"
+SWEP.CameraAttachment = 4
 SWEP.CameraAttachmentScale = 5
 SWEP.MuzzleFlashEnabled = true -- Enable muzzle flash
 SWEP.MuzzleAttachmentRaw = nil -- This will override whatever string you gave. This is the raw attachment NUMBER. This is overridden or created when a gun makes a muzzle event
@@ -407,123 +410,123 @@ SWEP.AkimboHUD = false -- Draw holographic HUD for both weapons?
 SWEP.VElements = {
 	----[[SCOPES]]----
 	["scope_pk120"] = {
-		type = "Model", 
-		model = "models/weapons/tfa_grovez/mods/scopes/scope_pk120/model.mdl", 
-		bone = "tag_weapon", 
-		rel = "", 
-		pos = Vector(-0.03, 4.1, 4.74), 
-		angle = Angle(0, -90, 0), 
-		size = Vector(1.15, 1.15, 1.15), 
-		color = Color(255, 255, 255, 255), 
-		surpresslightning = false, 
-		material = "", 
-		skin = 0, 
-		bodygroup = {}, 
-		active = false, 
+		type = "Model",
+		model = "models/weapons/tfa_grovez/mods/scopes/scope_pk120/model.mdl",
+		bone = "tag_scope",
+		rel = "",
+		pos = Vector(-0.055, 0.59, -0.02),
+		angle = Angle(0, 90, 180),
+		size = Vector(1.15, 1.15, 1.15),
+		color = Color(255, 255, 255, 255),
+		surpresslightning = false,
+		material = "",
+		skin = 0,
+		bodygroup = {},
+		active = false,
 		bonemerge = false
 	},
 	["scope_pk120_lens"] = {
 		type = "Quad",
 		rel = "scope_pk120",
 		bone = "mod_scope_reticle",
-		pos = Vector(0, 10, 0),
+		pos = Vector(0, 5, 0),
 		angle = Angle(180, 0, -90),
-		size = 0.55,
+		size = 0.4,
 		draw_func_outer = DrawSingleReticle(),
 		active = false
 	},
 	["scope_uh1_gen2"] = {
-		type = "Model", 
-		model = "models/weapons/tfa_grovez/mods/scopes/scope_uh1_gen2/model.mdl", 
-		bone = "tag_weapon", 
-		rel = "", 
-		pos = Vector(-0.035, 4.1, 4.74), 
-		angle = Angle(0, -90, 0), 
-		size = Vector(1.025, 1.025, 1.025), 
-		color = Color(255, 255, 255, 255), 
-		surpresslightning = false, 
-		material = "", 
-		skin = 0, 
-		bodygroup = {}, 
-		active = false, 
+		type = "Model",
+		model = "models/weapons/tfa_grovez/mods/scopes/scope_uh1_gen2/model.mdl",
+		bone = "tag_scope",
+		rel = "",
+		pos = Vector(-0.0325, 0.59, -0.02),
+		angle = Angle(0, 90, 180),
+		size = Vector(1.025, 1.025, 1.025),
+		color = Color(255, 255, 255, 255),
+		surpresslightning = false,
+		material = "",
+		skin = 0,
+		bodygroup = {},
+		active = false,
 		bonemerge = false
 	},
 	["scope_uh1_gen2_lens"] = {
 		type = "Quad",
 		rel = "scope_uh1_gen2",
 		bone = "mod_scope_reticle",
-		pos = Vector(0, 10, 0),
+		pos = Vector(0, 5, -0.046),
 		angle = Angle(180, 0, -90),
-		size = 0.45,
+		size = 0.35,
 		draw_func_outer = DrawSingleReticle(),
 		active = false
 	},
 	----[[TOP_RAIL]]----
 	["flashlight_m300c_thorntail_black"] = {
-		type = "Model", 
-		model = "models/weapons/tfa_grovez/mods/tactical/flashlight_surefire_m300c/model.mdl", 
-		bone = "tag_weapon", 
-		rel = "", 
-		pos = Vector(-0.035, 11, 4.74), 
-		angle = Angle(0, 90, 0), 
-		size = Vector(1.05, 1.05, 1.05), 
-		color = Color(255, 255, 255, 255), 
-		surpresslightning = false, 
-		material = "", 
-		skin = 0, 
-		bodygroup = {[0] = 1}, 
-		active = false, 
+		type = "Model",
+		model = "models/weapons/tfa_grovez/mods/tactical/flashlight_surefire_m300c/model.mdl",
+		bone = "tag_tactical_top",
+		rel = "",
+		pos = Vector(-0.02, 1.75, -0.005),
+		angle = Angle(0, -90, 180),
+		size = Vector(1.05, 1.05, 1.05),
+		color = Color(255, 255, 255, 255),
+		surpresslightning = false,
+		material = "",
+		skin = 0,
+		bodygroup = {[0] = 1},
+		active = false,
 		bonemerge = false
 	},
 	["flashlight_m300c_thorntail_tan"] = {
-		type = "Model", 
-		model = "models/weapons/tfa_grovez/mods/tactical/flashlight_surefire_m300c/model.mdl", 
-		bone = "tag_weapon", 
-		rel = "", 
-		pos = Vector(-0.035, 11, 4.74), 
-		angle = Angle(0, 90, 0), 
-		size = Vector(1.05, 1.05, 1.05), 
-		color = Color(255, 255, 255, 255), 
-		surpresslightning = false, 
-		material = "", 
-		skin = 1, 
-		bodygroup = {[0] = 1}, 
-		active = false, 
+		type = "Model",
+		model = "models/weapons/tfa_grovez/mods/tactical/flashlight_surefire_m300c/model.mdl",
+		bone = "tag_tactical_top",
+		rel = "",
+		pos = Vector(-0.02, 1.75, -0.005),
+		angle = Angle(0, -90, 180),
+		size = Vector(1.05, 1.05, 1.05),
+		color = Color(255, 255, 255, 255),
+		surpresslightning = false,
+		material = "",
+		skin = 1,
+		bodygroup = {[0] = 1},
+		active = false,
 		bonemerge = false
 	},
 	----[[RIGHT_RAIL]]----
 	["flashlight_m300c_scout_black"] = {
-		type = "Model", 
-		model = "models/weapons/tfa_grovez/mods/tactical/flashlight_surefire_m300c/model.mdl", 
-		bone = "tag_weapon", 
-		rel = "", 
-		pos = Vector(-1.0, 13.68, 3.8), 
-		angle = Angle(0, 90, -90), 
-		size = Vector(1.05, 1.05, 1.05), 
-		color = Color(255, 255, 255, 255), 
-		surpresslightning = false, 
-		material = "", 
-		skin = 0, 
-		bodygroup = {[0] = 0}, 
-		active = false, 
+		type = "Model",
+		model = "models/weapons/tfa_grovez/mods/tactical/flashlight_surefire_m300c/model.mdl",
+		bone = "tag_tactical_right",
+		rel = "",
+		pos = Vector(0.02, 0.1, 0.015),
+		angle = Angle(0, -90, 90),
+		size = Vector(1.05, 1.05, 1.05),
+		color = Color(255, 255, 255, 255),
+		surpresslightning = false,
+		material = "",
+		skin = 0,
+		bodygroup = {[0] = 0},
+		active = false,
 		bonemerge = false
 	},
 	["flashlight_m300c_scout_tan"] = {
-		type = "Model", 
-		model = "models/weapons/tfa_grovez/mods/tactical/flashlight_surefire_m300c/model.mdl", 
-		bone = "tag_weapon", 
-		rel = "", 
-		pos = Vector(-1.0, 13.68, 3.8), 
-		angle = Angle(0, 90, -90), 
-		size = Vector(1.05, 1.05, 1.05), 
-		color = Color(255, 255, 255, 255), 
-		surpresslightning = false, 
-		material = "", 
-		skin = 1, 
-		bodygroup = {[0] = 0}, 
-		active = false, 
+		type = "Model",
+		model = "models/weapons/tfa_grovez/mods/tactical/flashlight_surefire_m300c/model.mdl",
+		bone = "tag_tactical_right",
+		rel = "",
+		pos = Vector(0.02, 0.1, 0.015),
+		angle = Angle(0, -90, 90),
+		size = Vector(1.05, 1.05, 1.05),
+		color = Color(255, 255, 255, 255),
+		surpresslightning = false,
+		material = "",
+		skin = 1,
+		bodygroup = {[0] = 0},
+		active = false,
 		bonemerge = false
-	},
+	}
 }
 ----[[ATTACHMENTS]]----
 SWEP.Attachments = {
