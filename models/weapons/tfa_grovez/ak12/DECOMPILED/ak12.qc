@@ -74,10 +74,10 @@ $cdmaterials "models\weapons\tfa_grovez\ak12\"
 $cdmaterials "models\weapons\tfa_grovez\ammo\545x39\"
 
 //ATTACHMENTS
-$attachment "ATT_MUZZLEFLAH" "muzzle" 0 0.5 0 rotate 0 90 180
-$attachment "ATT_MUZZLEFLAH_SUPPRESSED" "muzzle_supp" 0 0 0 rotate 0 90 180
-$attachment "ATT_SHELL_EJECTION_PORT" "shell" 0 0 0 rotate 0 90 -90
-$attachment "ATT_CAMERA" "camera" 0 0 0 rotate -90 0 -90
+$attachment "muzzle" "muzzle" 0 0.5 0 rotate 0 90 180
+$attachment "muzzle_supp" "muzzle_supp" 0 0 0 rotate 0 90 180
+$attachment "shell" "shell" 0 0 0 rotate 0 90 -90
+$attachment "camera" "camera" 0 0 0 rotate -90 0 -90
 //$attachment "ATT_SCOPE" "tag_scope" 0 0 0 rotate 0 90 180
 //$attachment "ATT_SIGHT" "tag_sight" 0 0 0 rotate 0 90 180
 //$attachment "ATT_TAC_TOP" "tag_tactical_top" 0 0 0 rotate 0 90 180

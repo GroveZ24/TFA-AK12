@@ -174,7 +174,7 @@ SWEP.RunSightsAng = Vector(0, 0, 0)
 SWEP.CrouchPos = Vector(-0.577, -1.121, -1.571)
 SWEP.CrouchAng = Vector(0, 0, -6.027)
 --Position while aiming
-SWEP.IronSightsPos = Vector(-2.665, -1.5, 0.72)
+SWEP.IronSightsPos = Vector(-2.67, -1.5, 0.75)
 SWEP.IronSightsAng = Vector(-1.03235, 0.206872, 5.43371)
 --Inspection position
 SWEP.InspectPos = Vector(10.877, -9.705, 3.171)
@@ -196,8 +196,8 @@ SWEP.Secondary.IronFOV = 80 -- View FOV
 SWEP.IronViewModelFOV = 65 -- Viewmodel FOV
 SWEP.IronSightTime = 0.35
 --Offsets
-SWEP.SightOffset_PK120 = Vector(0.1225, 0, -1.54)
-SWEP.SightOffset_UH1_GEN2 = Vector(0.11, 0, -1.215)
+SWEP.SightOffset_PK120 = Vector(0.12, 0, -1.48)
+SWEP.SightOffset_UH1_GEN2 = Vector(0.12, 0, -1.195)
 ----[[WORLDMODEL]]----
 SWEP.WorldModel = "" -- Weapon world model path
 SWEP.Bodygroups_W = {}
@@ -266,11 +266,10 @@ SWEP.SequenceRateOverride = {
 }
 ----[[EFFECTS]]----
 --Attachments
-SWEP.MuzzleAttachment = "ATT_MUZZLEFLAH"
-SWEP.MuzzleAttachmentSuppressed = "ATT_MUZZLEFLAH_SUPPRESSED"
-SWEP.ShellAttachment = "ATT_SHELL_EJECTION_PORT"
-SWEP.CameraAttachment = 4
-SWEP.CameraAttachmentScale = 5
+SWEP.MuzzleAttachment = "muzzle"
+SWEP.ShellAttachment = "shell"
+--SWEP.CameraAttachment = "camera"
+SWEP.CameraAttachmentScale = 50
 SWEP.MuzzleFlashEnabled = true -- Enable muzzle flash
 SWEP.MuzzleAttachmentRaw = nil -- This will override whatever string you gave. This is the raw attachment NUMBER. This is overridden or created when a gun makes a muzzle event
 SWEP.AutoDetectMuzzleAttachment = false -- For multi-barrel weapons, detect the proper attachment?
@@ -455,7 +454,7 @@ SWEP.VElements = {
 		type = "Quad",
 		rel = "scope_uh1_gen2",
 		bone = "mod_scope_reticle",
-		pos = Vector(0, 5, -0.046),
+		pos = Vector(0, 5, 0),
 		angle = Angle(180, 0, -90),
 		size = 0.35,
 		draw_func_outer = DrawSingleReticle(),
