@@ -108,30 +108,30 @@ SWEP.Primary.Ammo = "ar2" -- "pistol" "357" "smg1" "ar2" "buckshot" "SniperPenet
 SWEP.Primary.AmmoConsumption = 1 -- Ammo consumed per shot
 SWEP.DisableChambering = false -- Disable round-in-the-chamber
 ----[[RECOIL]]----
-SWEP.Primary.KickUp = 0.275 -- This is the maximum upwards recoil (rise)
-SWEP.Primary.KickDown = 0.225 -- This is the maximum downwards recoil (skeet)
-SWEP.Primary.KickHorizontal = 0.175 -- This is the maximum sideways recoil (no real term)
-SWEP.Primary.StaticRecoilFactor = 0.5 -- Amount of recoil to directly apply to EyeAngles
+SWEP.Primary.KickUp = 0.2 -- This is the maximum upwards recoil (rise)
+SWEP.Primary.KickDown = 0.15 -- This is the maximum downwards recoil (skeet)
+SWEP.Primary.KickHorizontal = 0.1 -- This is the maximum sideways recoil (no real term)
+SWEP.Primary.StaticRecoilFactor = 0.35 -- Amount of recoil to directly apply to EyeAngles
 --Multipliers
 SWEP.IronRecoilMultiplier = 0.95
 SWEP.CrouchRecoilMultiplier = 0.9
-SWEP.JumpRecoilMultiplier = 2
-SWEP.WallRecoilMultiplier = 2
+SWEP.JumpRecoilMultiplier = 1.5
+SWEP.WallRecoilMultiplier = 1.25
 SWEP.ChangeStateRecoilMultiplier = 2
 ----[[ACCURACY]]----
 SWEP.Primary.Spread = .025 -- This is hip-fire acuracy. Less is more (1 is horribly awful, .0001 is close to perfect)
-SWEP.Primary.IronAccuracy = .0075 -- Ironsight accuracy, should be the same for shotguns
+SWEP.Primary.IronAccuracy = .0025 -- Ironsight accuracy, should be the same for shotguns
 SWEP.Primary.DisplaySpread = nil -- Defaults to true. Display spread on customization screen?
 SWEP.Primary.DisplayIronSpread = nil -- Defaults to Primary.DisplaySpread
-SWEP.Primary.SpreadMultiplierMax = 3 -- How far the spread can expand when you shoot
-SWEP.Primary.SpreadIncrement = 1.5 -- What percentage of the modifier is added on, per shot
-SWEP.Primary.SpreadRecovery = 12 -- How much the spread recovers, per second
+SWEP.Primary.SpreadMultiplierMax = 5 -- How far the spread can expand when you shoot
+SWEP.Primary.SpreadIncrement = 2.5 -- What percentage of the modifier is added on, per shot
+SWEP.Primary.SpreadRecovery = 15 -- How much the spread recovers, per second
 SWEP.Primary.SpreadRecoveryDelay = 0 -- Delay in seconds before spread starts to recover
 --Multipliers
 SWEP.CrouchAccuracyMultiplier = 0.75
-SWEP.ChangeStateAccuracyMultiplier = 1.25
+SWEP.ChangeStateAccuracyMultiplier = 2
 SWEP.JumpAccuracyMultiplier = 5
-SWEP.WalkAccuracyMultiplier = 2.5
+SWEP.WalkAccuracyMultiplier = 2
 ----[[RANGE]]----
 SWEP.DisplayFalloff = nil
 SWEP.Primary.RangeFalloffLUT = {
@@ -173,9 +173,6 @@ SWEP.RunSightsAng = Vector(0, 0, 0)
 --Position when crouching
 SWEP.CrouchPos = Vector(-0.577, -1.121, -1.571)
 SWEP.CrouchAng = Vector(0, 0, -6.027)
---Position while aiming
-SWEP.IronSightsPos = Vector(-2.665, -1.5, 0.72)
-SWEP.IronSightsAng = Vector(-1.03235, 0.206872, 5.43371)
 --Inspection position
 SWEP.InspectPos = Vector(10.877, -9.705, 3.171)
 SWEP.InspectAng = Vector(47.527, 50.993, 56.782)
@@ -194,10 +191,12 @@ SWEP.ToCrouchTime = 0.3
 ----[[IRON SIGHTS]]----
 SWEP.Secondary.IronFOV = 80 -- View FOV
 SWEP.IronViewModelFOV = 65 -- Viewmodel FOV
-SWEP.IronSightTime = 0.35
+SWEP.IronSightTime = 0.35 -- Temp
+SWEP.IronSightsPos = Vector(-2.67, -1.5, 0.75)
+SWEP.IronSightsAng = Vector(-1.03235, 0.206872, 5.43371)
 --Offsets
-SWEP.SightOffset_PK120 = Vector(0.125, 0, -1.535)
-SWEP.SightOffset_UH1_GEN2 = Vector(0.125, 0, -1.26)
+SWEP.SightOffset_PK120 = Vector(0.12, 0, -1.485)
+SWEP.SightOffset_UH1_GEN2 = Vector(0.12, 0, -1.19)
 ----[[WORLDMODEL]]----
 SWEP.WorldModel = "" -- Weapon world model path
 SWEP.Bodygroups_W = {}
