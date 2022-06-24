@@ -20,11 +20,9 @@ SWEP.Slot = 2
 SWEP.SlotPos = 0
 SWEP.AutoSwitchTo = false
 SWEP.AutoSwitchFrom = false
-SWEP.Weight = 60
 SWEP.Type = "Rifle" -- "Pistol" "Machine Pistol" "Revolver" "Sub-Machine Gun" "Rifle" "Carbine" "Light Machine Gun" "Shotgun" "Designated Marksman Rifle" "Sniper Rifle" "Grenade" "Launcher"
 SWEP.Type_Displayed = "Assault Rifle"
 ----[[BASIC STATS]]----
---SWEP.FireBulletsFromBarrel = false
 SWEP.Primary.RPM = 700 -- This is in Rounds Per Minute / RPM
 SWEP.Primary.NumShots = 1 -- The number of shots the weapon fires
 SWEP.Primary.HullSize = 0 -- Big bullets, increase this value. They increase the hull size of the hitscan bullet
@@ -41,6 +39,9 @@ SWEP.Primary.Knockback = 0 -- Autodetected if nil; this is the velocity kickback
 SWEP.Primary.DryFireDelay = 0.5 -- How long you have to wait after firing your last shot before a dryfire animation can play
 SWEP.Primary.BurstDelay = 0 -- Delay between bursts, leave nil to autocalculate
 SWEP.FiresUnderwater = false -- Whenever this weapon can fire underwater
+----[[TFA CUSTOM BASE BASIC STATS]]----
+SWEP.Ergonomics = 60
+SWEP.Weight = 3.55
 ----[[TFA BASE EXTENDED BASIC STATS]]----
 SWEP.Primary.RPM_Semi = 700 -- RPM for semi-automatic or burst fire
 SWEP.Primary.RPM_Burst = 700 -- RPM for burst fire, overrides semi
@@ -157,7 +158,6 @@ SWEP.MaxPenetrationCounter = nil -- The maximum number of surface penetrations. 
 SWEP.Primary.PenetrationPower = nil -- This control how much we can penetrate various surfaces in hammer units. 400 hammer units = 1. 800 hammer units = 0.5
 SWEP.Primary.PenetrationMultiplier = nil -- Defaults to 1. The LESSER this value is, the BETTER is penetration
 ----[[MOBILITY RELATED]]----
-SWEP.MoveSpeed = 1
 SWEP.IronSightsMoveSpeed = 0.85
 ----[[VIEWMODEL]]----
 SWEP.ViewModel = "models/weapons/tfa_grovez/ak12/c_ak12.mdl" -- Viewmodel path
@@ -191,7 +191,6 @@ SWEP.ToCrouchTime = 0.3
 ----[[IRON SIGHTS]]----
 SWEP.Secondary.IronFOV = 80 -- View FOV
 SWEP.IronViewModelFOV = 65 -- Viewmodel FOV
-SWEP.IronSightTime = 0.35 -- Temp
 SWEP.IronSightsPos = Vector(-2.67, -1.5, 0.75)
 SWEP.IronSightsAng = Vector(-1.03235, 0.206872, 5.43371)
 --Offsets
