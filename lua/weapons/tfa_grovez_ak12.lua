@@ -42,6 +42,7 @@ SWEP.FiresUnderwater = false -- Whenever this weapon can fire underwater
 ----[[TFA CUSTOM BASE BASIC STATS]]----
 SWEP.Ergonomics = 60
 SWEP.Weight = 3.55
+SWEP.CanReloadWhileSprinting = false
 ----[[TFA BASE EXTENDED BASIC STATS]]----
 SWEP.Primary.RPM_Semi = 700 -- RPM for semi-automatic or burst fire
 SWEP.Primary.RPM_Burst = 700 -- RPM for burst fire, overrides semi
