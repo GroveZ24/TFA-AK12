@@ -170,6 +170,9 @@ SWEP.VMAng = Vector(0, 0, 0)
 --Position when sprinting
 SWEP.RunSightsPos = Vector(0, 0, 0)
 SWEP.RunSightsAng = Vector(0, 0, 0)
+--Position when walking
+SWEP.VMOffsetWalk = Vector(-0.25, -0.75, -0.25)
+SWEP.VMAngleWalk = Angle(1, 2, -3)
 --Position when crouching
 SWEP.CrouchPos = Vector(-0.577, -1.121, -1.571)
 SWEP.CrouchAng = Vector(0, 0, -6.027)
