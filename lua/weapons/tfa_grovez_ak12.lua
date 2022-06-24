@@ -43,6 +43,10 @@ SWEP.FiresUnderwater = false -- Whenever this weapon can fire underwater
 SWEP.Ergonomics = 60
 SWEP.Weight = 3.55
 SWEP.CanReloadWhileSprinting = false
+--Screen shake
+SWEP.ScreenShakeForceMultiplier = 1
+SWEP.ScreenShakeFOVMultiplier = 1
+SWEP.ScreenShakeSpeedMultiplier = 1
 ----[[TFA BASE EXTENDED BASIC STATS]]----
 SWEP.Primary.RPM_Semi = 700 -- RPM for semi-automatic or burst fire
 SWEP.Primary.RPM_Burst = 700 -- RPM for burst fire, overrides semi
@@ -407,6 +411,10 @@ SWEP.EventTable = {
 SWEP.Akimbo = false -- Akimbo gun?  Alternates between primary and secondary attacks
 SWEP.AkimboHUD = false -- Draw holographic HUD for both weapons?
 ----[[VIEWMODELELEMENTS]]----
+SWEP.ViewModelBoneMods = {
+	["muzzle"] = {scale = Vector(1, 1, 1), pos = Vector(0, 3.25, 0), angle = Angle(0, 0, 0)},
+}
+
 SWEP.VElements = {
 	----[[SCOPES]]----
 	["scope_pk120"] = {
