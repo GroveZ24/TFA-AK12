@@ -316,14 +316,14 @@ SWEP.MagImpactSounds = {
 SWEP.MagModel = "models/weapons/tfa_grovez/ak12/mag/ak12_mag_default.mdl"
 SWEP.MagBodygroups = "000"
 SWEP.MagSkin = 0
-SWEP.MagDropSrcForward = 10
-SWEP.MagDropSrcRight = 7.5
-SWEP.MagDropSrcUp = -20
-SWEP.MagDropAng = Angle(-90, 0, 0)
-SWEP.MagYeetVelocityForward = 0
+SWEP.MagDropSrcForward = 11
+SWEP.MagDropSrcRight = 4
+SWEP.MagDropSrcUp = -16
+SWEP.MagDropAng = Angle(-85, 0, 0)
+SWEP.MagYeetVelocityForward = 25
 SWEP.MagYeetVelocityRight = 0
 SWEP.MagYeetVelocityUp = 0
-SWEP.MagAngleVelocity = Vector(math.random(-50, 50), -250, math.random(-50, 50))
+SWEP.MagAngleVelocity = Vector(math.random(-50, 50), -200, math.random(-50, 50))
 SWEP.MagRemovalTimer = 60
 ----[[EVENT TABLE]]----
 function SWEP:AK12_Mag1_Update(vm)
@@ -409,8 +409,8 @@ SWEP.EventTable = {
 		{time = 3 / 30, type = "sound", value = Sound("TFA_GROVEZ.AK12.ReloadEmptyStart")},
 		{time = 15 / 30, type = "sound", value = Sound("TFA_GROVEZ.AK12.MagHit")},
 		{time = 17 / 30, type = "sound", value = Sound("TFA_GROVEZ.AK12.MagOutFast")},
-		{time = 24 / 30, type = "lua", value = function(wep, vm) wep:TFAMagDrop() end},
 		{time = 26 / 30, type = "sound", value = Sound("TFA_GROVEZ.AK12.ReloadRattle")},
+		{time = 26 / 30, type = "lua", value = function(wep, vm) wep:TFAMagDrop() end},
 		{time = 33 / 30, type = "sound", value = Sound("TFA_GROVEZ.AK12.MagInserting")},
 		{time = 40 / 30, type = "sound", value = Sound("TFA_GROVEZ.AK12.MagIn")},
 		{time = 45 / 30, type = "sound", value = Sound("TFA_GROVEZ.AK12.ReloadRattle2")},
