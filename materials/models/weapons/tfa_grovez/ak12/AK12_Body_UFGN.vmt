@@ -1,8 +1,8 @@
 "VertexlitGeneric"
 {
-	$basetexture				"models\weapons\tfa_grovez\ak12\skin1\AK12_Magazine_D"
-	$bumpmap					"models\weapons\tfa_grovez\ak12\AK12_Magazine_N"
-	$phongexponenttexture		"models\weapons\tfa_grovez\ak12\AK12_Magazine_E"
+	$basetexture				"models\weapons\tfa_grovez\ak12\AK12_Body_UFGN_D"
+	$bumpmap					"models\weapons\tfa_grovez\ak12\AK12_Body_UFGN_N"
+	$phongexponenttexture		"models\weapons\tfa_grovez\ak12\AK12_Body_UFGN_E"
 	"$phongwarptexture"			"models\weapons\tfa_grovez\phongwarp_metal2"
 	"$color2"					"[0.5 0.5 0.5]"
 	"$blendTintByBaseAlpha"		"1"
@@ -12,7 +12,7 @@
 	"$envmaptint"				"[ .13 .13 .13 ]"
 
 	"$phong"					"1"
-	"$phongboost"				"50"
+	"$phongboost"				"15"
 	"$phongfresnelranges"		"[0.32 0.72 0.99]"
 	"$phongalbedotint" 			"1"
 

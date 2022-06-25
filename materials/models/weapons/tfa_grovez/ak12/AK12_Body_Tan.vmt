@@ -1,6 +1,6 @@
 "VertexlitGeneric"
 {
-	$basetexture				"models\weapons\tfa_grovez\ak12\skin1\AK12_Body_D"
+	$basetexture				"models\weapons\tfa_grovez\ak12\AK12_Body_Tan_D"
 	$bumpmap					"models\weapons\tfa_grovez\ak12\AK12_Body_N"
 	$phongexponenttexture		"models\weapons\tfa_grovez\ak12\AK12_Body_E"
 	"$phongwarptexture"			"models\weapons\tfa_grovez\phongwarp_metal2"

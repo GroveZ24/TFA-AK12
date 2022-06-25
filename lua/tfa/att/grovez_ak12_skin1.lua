@@ -9,19 +9,22 @@ ATTACHMENT.Description = {}
 
 ATTACHMENT.WeaponTable = {
 	["MaterialTable_V"] = {
-		[1] = "models/weapons/tfa_grovez/ak12/skin1/AK12_Body",
-		[2] = "models/weapons/tfa_grovez/ak12/skin1/AK12_Magazine",
-		[4] = "models/weapons/tfa_grovez/ak12/skin1/AK12_Stock",
-		[5] = "models/weapons/tfa_grovez/ak12/skin1/AK12_Stock_EVO"
+		[1] = "models/weapons/tfa_grovez/ak12/AK12_Body_Tan",
+		[2] = "models/weapons/tfa_grovez/ak12/AK12_Magazine_Tan",
+		[4] = "models/weapons/tfa_grovez/ak12/AK12_Stock_Tan",
+		[5] = "models/weapons/tfa_grovez/ak12/AK12_Stock_EVO_Tan"
 	}
 }
 
-local function resetMatCache(att, wep)
+function ATTACHMENT:Attach(wep)
 	wep.MaterialCached = false
+	wep.MagSkin = 1
 end
 
-ATTACHMENT.Attach = resetMatCache
-ATTACHMENT.Detach = resetMatCache
+function ATTACHMENT:Detach(wep)
+	wep.MaterialCached = false
+	wep.MagSkin = 0
+end
 
 ATTACHMENT.AttachSound = "TFA_GROVEZ.SHARED.MENU_SKIN_SELECT"
 ATTACHMENT.DetachSound = "TFA_GROVEZ.SHARED.MENU_SKIN_DESELECT"
