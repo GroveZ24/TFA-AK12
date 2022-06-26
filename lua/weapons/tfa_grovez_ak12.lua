@@ -176,8 +176,8 @@ SWEP.VMAng = Vector(0, 0, 0)
 SWEP.RunSightsPos = Vector(0, 0, 0)
 SWEP.RunSightsAng = Vector(0, 0, 0)
 --Position when walking
-SWEP.VMOffsetWalk = Vector(-0.25, -0.75, -0.25)
-SWEP.VMAngleWalk = Angle(1, 2, -3)
+SWEP.WalkPos = Vector(-0.25, -0.75, -0.25)
+SWEP.WalkAng = Angle(1, 2, -3)
 --Position when crouching
 SWEP.CrouchPos = Vector(-0.577, -1.121, -1.571)
 SWEP.CrouchAng = Vector(0, 0, -6.027)
@@ -187,6 +187,9 @@ SWEP.InspectAng = Vector(47.527, 50.993, 56.782)
 --Safety position
 SWEP.SafetyPos = Vector(0.522, -1.721, -3.036)
 SWEP.SafetyAng = Vector(-14.344, 37.99, -33.807)
+--Nearwall offset
+SWEP.NearWallPos = Vector(0.091287083923817, -0.4564354121685, -0.18257416784763)
+SWEP.NearWallPosADS = Vector(SWEP.NearWallPos.x * 0.2, SWEP.NearWallPos.y * 0.5, SWEP.NearWallPos.z * 0.3)
 --Misc
 SWEP.VMPos_Additive = false
 SWEP.CenteredPos = nil -- The viewmodel positional offset, used for centering. Leave nil to autodetect using ironsights
@@ -286,7 +289,7 @@ SWEP.LuaShellEject = true -- Enable shell ejection through lua?
 SWEP.LuaShellEjectDelay = 0 -- The delay to actually eject things
 SWEP.LuaShellModel = "models/weapons/tfa_grovez/shells/545x39/7n6/545x39_shell.mdl" -- The model to use for ejected shells
 SWEP.LuaShellScale = 0.5 -- The model scale to use for ejected shells
-SWEP.LuaShellYaw = nil -- The model yaw rotation ( relative ) to use for ejected shells
+SWEP.LuaShellYaw = nil -- The model yaw rotation (relative) to use for ejected shells
 -- Tracer Stuff
 SWEP.TracerName = nil -- Change to a string of your tracer name
 SWEP.TracerCount = 1 -- 0 disables, otherwise, 1 in X chance
@@ -325,7 +328,7 @@ SWEP.MagYeetVelocityRight = 0
 SWEP.MagYeetVelocityUp = 0
 SWEP.MagAngleVelocity = Vector(math.random(-50, 50), -200, math.random(-50, 50))
 SWEP.MagRemovalTimer = 60
-----[[EVENT TABLE]]----
+----[[EVENT TABLE FUNCTIONS]]----
 function SWEP:AK12_Mag1_Update(vm)
 	if self:Clip1() <= 1 then
 		self.Bodygroups_V[2] = 0
@@ -357,7 +360,7 @@ end
 function SWEP:AK12_Mag2_Full(vm)
 	self.Bodygroups_V[1] = 3
 end
-
+----[[EVENT TABLE]]----
 SWEP.EventTable = {
 	["ak12_idle"] = {
 		{time = 0, type = "lua", value = SWEP.AK12_Mag1_Update},
@@ -563,7 +566,7 @@ SWEP.Attachments = {
 SWEP.AttachmentDependencies = {}
 SWEP.AttachmentExclusions = {
 	["grovez_flashlight_surefire_m300c_thorntail_black"] = {"grovez_flashlight_surefire_m300c_scout_black", "grovez_flashlight_surefire_m300c_scout_tan"},
-	["grovez_flashlight_surefire_m300c_thorntail_tan"] = {"grovez_flashlight_surefire_m300c_scout_black", "grovez_flashlight_surefire_m300c_scout_tan"},
+	["grovez_flashlight_surefire_m300c_thorntail_tan"] = {"grovez_flashlight_surefire_m300c_scout_black", "grovez_flashlight_surefire_m300c_scout_tan"}
 }
 SWEP.AttachmentTableOverride = {}
 SWEP.AttachmentIconOverride = {}

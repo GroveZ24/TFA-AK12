@@ -64,6 +64,32 @@ $bodygroup "Muzzle"
 	blank
 }
 
+//TEXTUREGROUPS
+$texturegroup skin
+{
+	{
+		"AK12_Body"
+		"AK12_Magazine"
+		"AK12_Muzzlebrake"
+		"AK12_Stock"
+		"AK12_Stock_EVO"
+	}
+	{
+		"AK12_Body_Tan"
+		"AK12_Magazine_Tan"
+		"AK12_Muzzlebrake"
+		"AK12_Stock_Tan"
+		"AK12_Stock_EVO_Tan"
+	}
+	{
+		"AK12_Body_UFGN"
+		"AK12_Magazine_UFGN"
+		"AK12_Muzzlebrake"
+		"AK12_Stock_UFGN"
+		"AK12_Stock_EVO"
+	}
+}
+
 //ZALOOPA
 $surfaceprop "default"
 $contents "solid"
