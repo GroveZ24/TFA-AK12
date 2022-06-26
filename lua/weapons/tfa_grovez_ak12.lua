@@ -363,16 +363,16 @@ end
 ----[[EVENT TABLE]]----
 SWEP.EventTable = {
 	["ak12_idle"] = {
-		{time = 0, type = "lua", value = SWEP.AK12_Mag1_Update},
-		{time = 0, type = "lua", value = SWEP.AK12_Mag2_Full}
+		{time = 0, type = "lua", value = function(wep, vm) wep:AK12_Mag1_Update() end},
+		{time = 0, type = "lua", value = function(wep, vm) wep:AK12_Mag2_Full() end}
 	},
 	["ak12_fire"] = {
-		{time = 0, type = "lua", value = SWEP.AK12_Mag1_Update},
-		{time = 0, type = "lua", value = SWEP.AK12_Mag2_Full}
+		{time = 0, type = "lua", value = function(wep, vm) wep:AK12_Mag1_Update() end},
+		{time = 0, type = "lua", value = function(wep, vm) wep:AK12_Mag2_Full() end}
 	},
 	["ak12_ready"] = {
-		{time = 0, type = "lua", value = SWEP.AK12_Mag1_Full},
-		{time = 0, type = "lua", value = SWEP.AK12_Mag2_Full},
+		{time = 0, type = "lua", value = function(wep, vm) wep:AK12_Mag1_Full() end},
+		{time = 0, type = "lua", value = function(wep, vm) wep:AK12_Mag2_Full() end},
 		{time = 0, type = "sound", value = Sound("TFA_GROVEZ.AK12.DrawFast")},
 		{time = 0, type = "sound", value = Sound("TFA_GROVEZ.AK12.BoltGrab")},
 		{time = 4 / 30, type = "sound", value = Sound("TFA_GROVEZ.AK12.BoltBack")},
@@ -391,8 +391,8 @@ SWEP.EventTable = {
 		{time = 0, type = "sound", value = Sound("TFA_GROVEZ.AK12.HolsterRattle")}
 	},
 	["ak12_reload"] = {
-		{time = 0, type = "lua", value = SWEP.AK12_Mag2_Update},
-		{time = 0, type = "lua", value = SWEP.AK12_Mag1_Full},
+		{time = 0, type = "lua", value = function(wep, vm) wep:AK12_Mag2_Update() end},
+		{time = 0, type = "lua", value = function(wep, vm) wep:AK12_Mag1_Full() end},
 		{time = 0, type = "sound", value = Sound("TFA_GROVEZ.AK12.ReloadStartRattle")},
 		{time = 2 / 30, type = "sound", value = Sound("TFA_GROVEZ.AK12.ReloadStart")},
 		{time = 12 / 30, type = "sound", value = Sound("TFA_GROVEZ.AK12.MagHit")},
@@ -406,8 +406,8 @@ SWEP.EventTable = {
 		{time = 68 / 30, type = "sound", value = Sound("TFA_GROVEZ.AK12.ReloadEndShoulder")}
 	},
 	["ak12_reload_empty"] = {
-		{time = 0, type = "lua", value = SWEP.AK12_Mag2_Update},
-		{time = 0, type = "lua", value = SWEP.AK12_Mag1_Full},
+		{time = 0, type = "lua", value = function(wep, vm) wep:AK12_Mag2_Update() end},
+		{time = 0, type = "lua", value = function(wep, vm) wep:AK12_Mag1_Full() end},
 		{time = 0, type = "sound", value = Sound("TFA_GROVEZ.AK12.ReloadStartRattle")},
 		{time = 3 / 30, type = "sound", value = Sound("TFA_GROVEZ.AK12.ReloadEmptyStart")},
 		{time = 15 / 30, type = "sound", value = Sound("TFA_GROVEZ.AK12.MagHit")},
@@ -425,13 +425,12 @@ SWEP.EventTable = {
 		{time = 80 / 30, type = "sound", value = Sound("TFA_GROVEZ.AK12.ReloadEndShoulder")}
 	}
 }
-
 ----[[AKIMBO]]----
 SWEP.Akimbo = false -- Akimbo gun?  Alternates between primary and secondary attacks
 SWEP.AkimboHUD = false -- Draw holographic HUD for both weapons?
 ----[[VIEWMODELELEMENTS]]----
 SWEP.ViewModelBoneMods = {
-	["muzzle"] = {scale = Vector(1, 1, 1), pos = Vector(0, 3.25, 0), angle = Angle(0, 0, 0)},
+	["muzzle"] = {scale = Vector(1, 1, 1), pos = Vector(0, 3.25, 0), angle = Angle(0, 0, 0)}
 }
 
 SWEP.VElements = {
@@ -491,7 +490,7 @@ SWEP.VElements = {
 	----[[TOP_RAIL]]----
 	["flashlight_m300c_thorntail_black"] = {
 		type = "Model",
-		model = "models/weapons/tfa_grovez/mods/tactical/flashlight_surefire_m300c/model.mdl",
+		model = "models/weapons/tfa_grovez/mods/tactical/flashlight_surefire_m300c_thorntail/model.mdl",
 		bone = "tag_tactical_top",
 		rel = "",
 		pos = Vector(-0.02, 1.75, -0.005),
@@ -501,13 +500,13 @@ SWEP.VElements = {
 		surpresslightning = false,
 		material = "",
 		skin = 0,
-		bodygroup = {[0] = 1},
+		bodygroup = {},
 		active = false,
 		bonemerge = false
 	},
 	["flashlight_m300c_thorntail_tan"] = {
 		type = "Model",
-		model = "models/weapons/tfa_grovez/mods/tactical/flashlight_surefire_m300c/model.mdl",
+		model = "models/weapons/tfa_grovez/mods/tactical/flashlight_surefire_m300c_thorntail/model.mdl",
 		bone = "tag_tactical_top",
 		rel = "",
 		pos = Vector(-0.02, 1.75, -0.005),
@@ -517,14 +516,14 @@ SWEP.VElements = {
 		surpresslightning = false,
 		material = "",
 		skin = 1,
-		bodygroup = {[0] = 1},
+		bodygroup = {},
 		active = false,
 		bonemerge = false
 	},
 	----[[RIGHT_RAIL]]----
 	["flashlight_m300c_scout_black"] = {
 		type = "Model",
-		model = "models/weapons/tfa_grovez/mods/tactical/flashlight_surefire_m300c/model.mdl",
+		model = "models/weapons/tfa_grovez/mods/tactical/flashlight_surefire_m300c_scout/model.mdl",
 		bone = "tag_tactical_right",
 		rel = "",
 		pos = Vector(0.02, 0.1, 0.015),
@@ -534,13 +533,13 @@ SWEP.VElements = {
 		surpresslightning = false,
 		material = "",
 		skin = 0,
-		bodygroup = {[0] = 0},
+		bodygroup = {},
 		active = false,
 		bonemerge = false
 	},
 	["flashlight_m300c_scout_tan"] = {
 		type = "Model",
-		model = "models/weapons/tfa_grovez/mods/tactical/flashlight_surefire_m300c/model.mdl",
+		model = "models/weapons/tfa_grovez/mods/tactical/flashlight_surefire_m300c_scout/model.mdl",
 		bone = "tag_tactical_right",
 		rel = "",
 		pos = Vector(0.02, 0.1, 0.015),
@@ -550,7 +549,7 @@ SWEP.VElements = {
 		surpresslightning = false,
 		material = "",
 		skin = 1,
-		bodygroup = {[0] = 0},
+		bodygroup = {},
 		active = false,
 		bonemerge = false
 	}

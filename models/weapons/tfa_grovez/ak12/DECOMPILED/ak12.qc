@@ -104,13 +104,7 @@ $attachment "muzzle" "muzzle" 0 0.5 0 rotate 0 90 180
 $attachment "muzzle_supp" "muzzle_supp" 0 0 0 rotate 0 90 180
 $attachment "shell" "shell" 0 0 0 rotate 0 90 -90
 $attachment "camera" "camera" 0 0 0 rotate -90 0 -90
-//$attachment "ATT_SCOPE" "tag_scope" 0 0 0 rotate 0 90 180
-//$attachment "ATT_SIGHT" "tag_sight" 0 0 0 rotate 0 90 180
-//$attachment "ATT_TAC_TOP" "tag_tactical_top" 0 0 0 rotate 0 90 180
-//$attachment "ATT_TAC_BOTTOM" "tag_tactical_bottom" 0 0 0 rotate 0 90 180
-//$attachment "ATT_TAC_RIGHT" "tag_tactical_right" 0 0 0 rotate 0 90 180
-//$attachment "ATT_FOREGRIP" "tag_foregrip" 0 0 0 rotate 0 90 180
-//$attachment "ATT_MUZZLE" "tag_muzzle" 0 0 0 rotate 0 90 180
+$attachment "flashlight" "lightsource" 0 0 0 rotate 0 90 180
 
 //DEFINEBONE
 $definebone "body" "" 0.000000 0.000000 -63.000000 -0.000000 0.000000 -89.999985 0.000000 0.000000 0.000000 -0.000000 0.000000 0.000000
@@ -132,6 +126,7 @@ $definebone "bipod3" "bipod1" -0.035880 -11.231321 -0.376289 -0.148210 -179.9998
 $definebone "bipod2" "tag_weapon" -0.712774 -29.636017 1.056515 -0.148281 -179.999969 0.000000 0.000000 0.000000 0.000000 -0.000000 0.000000 0.000000
 $definebone "tag_scope" "tag_weapon" 0.000000 -4.472015 4.726250 0.000057 0.000000 179.977325 0.000000 0.000000 0.000000 -0.000000 -0.000000 -0.000000
 $definebone "tag_sight" "tag_weapon" 0.000000 0.025140 4.726248 0.000057 0.000000 179.977325 0.000000 0.000000 0.000000 -0.000000 -0.000000 -0.000000
+$definebone "lightsource" "tag_weapon" 0.000000 0.000000 0.000000 0.000057 0.000000 179.977325 0.000000 0.000000 0.000000 0.000000 0.000000 0.000000
 $definebone "tag_tactical_top" "tag_weapon" 0.000000 -13.775118 4.726255 0.000057 0.000000 179.977325 0.000000 0.000000 0.000000 -0.000000 -0.000000 -0.000000
 $definebone "tag_tactical_bottom" "tag_weapon" 0.000000 -13.775119 1.743293 0.000057 0.000000 179.977448 0.000000 0.000000 0.000000 -0.000000 -0.000000 -0.000000
 $definebone "tag_tactical_right" "tag_weapon" -1.025235 -13.775118 3.820332 0.000057 0.000000 179.977448 0.000000 0.000000 -0.000000 -0.000000 -0.000000 -0.000000
