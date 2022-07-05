@@ -20,7 +20,7 @@ SWEP.Slot = 2
 SWEP.SlotPos = 0
 SWEP.AutoSwitchTo = false
 SWEP.AutoSwitchFrom = false
-SWEP.Type = "Rifle" -- "Pistol" "Machine Pistol" "Revolver" "Sub-Machine Gun" "Rifle" "Carbine" "Light Machine Gun" "Shotgun" "Designated Marksman Rifle" "Sniper Rifle" "Grenade" "Launcher"
+SWEP.Type = "Rifle"
 SWEP.Type_Displayed = "Assault Rifle"
 ----[[BASIC STATS]]----
 SWEP.Primary.RPM = 700 -- This is in Rounds Per Minute / RPM
@@ -29,24 +29,20 @@ SWEP.Primary.HullSize = 0 -- Big bullets, increase this value. They increase the
 SWEP.Primary.Automatic = true -- Automatic / Semi Auto
 --Bullet based
 SWEP.Primary.Damage = 25 -- Damage, in standard damage points
-SWEP.Primary.Force = 0 -- Force value, leave nil to autocalc
+SWEP.Primary.Force = 0.1 -- Force value, leave nil to autocalc
 --Projectile based
 SWEP.Primary.Projectile = nil -- Entity to shoot
 SWEP.Primary.ProjectileVelocity = 0 -- Entity to shoot's velocity
 SWEP.Primary.ProjectileModel = nil -- Entity to shoot's model
+----[[CUSTOM STATS]]----
+SWEP.EditedTFABase = true
+SWEP.Ergonomics = 40
+SWEP.Weight = 2.1
 ----[[TFA BASE BASIC STATS]]----
 SWEP.Primary.Knockback = 0 -- Autodetected if nil; this is the velocity kickback
 SWEP.Primary.DryFireDelay = 0.5 -- How long you have to wait after firing your last shot before a dryfire animation can play
 SWEP.Primary.BurstDelay = 0 -- Delay between bursts, leave nil to autocalculate
 SWEP.FiresUnderwater = false -- Whenever this weapon can fire underwater
-----[[TFA CUSTOM BASE BASIC STATS]]----
-SWEP.Ergonomics = 60
-SWEP.Weight = 3.55
-SWEP.CanReloadWhileSprinting = false
---Screen shake
-SWEP.ScreenShakeForceMultiplier = 1
-SWEP.ScreenShakeFOVMultiplier = 1
-SWEP.ScreenShakeSpeedMultiplier = 1
 ----[[TFA BASE EXTENDED BASIC STATS]]----
 SWEP.Primary.RPM_Semi = 700 -- RPM for semi-automatic or burst fire
 SWEP.Primary.RPM_Burst = 700 -- RPM for burst fire, overrides semi
@@ -93,10 +89,6 @@ SWEP.FireSoundAffectedByClipSize = false -- Play low ammo and last shot sounds?
 SWEP.LowAmmoSoundThreshold = nil -- Clip fill percentage below which low ammo sound will start playing; default is 0.33
 SWEP.LowAmmoSound = nil -- Low ammo sound
 SWEP.LastAmmoSound = nil -- Last shot sound
-----[[JAMMING]]----
-SWEP.CanJam = false -- Whenever weapon cam jam
-SWEP.JamChance = 0.04 -- The (maximal) chance the weapon will jam
-SWEP.JamFactor = 0.06 -- How to increase jam factor after each shot
 ----[[SILENCING]]----
 SWEP.CanBeSilenced = false -- Can we silence?
 SWEP.Silenced = false -- Silenced by default?
@@ -113,17 +105,21 @@ SWEP.Primary.DefaultClip = SWEP.Primary.ClipSize * 6 -- This is the number of bu
 SWEP.Primary.Ammo = "ar2" -- "pistol" "357" "smg1" "ar2" "buckshot" "SniperPenetratedRound"
 SWEP.Primary.AmmoConsumption = 1 -- Ammo consumed per shot
 SWEP.DisableChambering = false -- Disable round-in-the-chamber
+----[[SCREEN SHAKE]]----
+SWEP.ScreenShakeForceMultiplier = 1
+SWEP.ScreenShakeFOVMultiplier = 1
+SWEP.ScreenShakeSpeedMultiplier = 1
 ----[[RECOIL]]----
-SWEP.Primary.KickUp = 0.2 -- This is the maximum upwards recoil (rise)
-SWEP.Primary.KickDown = 0.15 -- This is the maximum downwards recoil (skeet)
-SWEP.Primary.KickHorizontal = 0.1 -- This is the maximum sideways recoil (no real term)
+SWEP.Primary.KickUp = 0.3 -- This is the maximum upwards recoil (rise)
+SWEP.Primary.KickDown = 0.225 -- This is the maximum downwards recoil (skeet)
+SWEP.Primary.KickHorizontal = 0.15 -- This is the maximum sideways recoil (no real term)
 SWEP.Primary.StaticRecoilFactor = 0.35 -- Amount of recoil to directly apply to EyeAngles
 --Multipliers
 SWEP.IronRecoilMultiplier = 0.95
 SWEP.CrouchRecoilMultiplier = 0.9
 SWEP.JumpRecoilMultiplier = 1.5
-SWEP.WallRecoilMultiplier = 1.25
-SWEP.ChangeStateRecoilMultiplier = 2
+SWEP.WallRecoilMultiplier = 1
+SWEP.ChangeStateRecoilMultiplier = 1.25
 ----[[ACCURACY]]----
 SWEP.Primary.Spread = .025 -- This is hip-fire acuracy. Less is more (1 is horribly awful, .0001 is close to perfect)
 SWEP.Primary.IronAccuracy = .0025 -- Ironsight accuracy, should be the same for shotguns
@@ -131,18 +127,18 @@ SWEP.Primary.DisplaySpread = nil -- Defaults to true. Display spread on customiz
 SWEP.Primary.DisplayIronSpread = nil -- Defaults to Primary.DisplaySpread
 SWEP.Primary.SpreadMultiplierMax = 5 -- How far the spread can expand when you shoot
 SWEP.Primary.SpreadIncrement = 2.5 -- What percentage of the modifier is added on, per shot
-SWEP.Primary.SpreadRecovery = 15 -- How much the spread recovers, per second
+SWEP.Primary.SpreadRecovery = 20 -- How much the spread recovers, per second
 SWEP.Primary.SpreadRecoveryDelay = 0 -- Delay in seconds before spread starts to recover
 --Multipliers
 SWEP.CrouchAccuracyMultiplier = 0.75
-SWEP.ChangeStateAccuracyMultiplier = 2
+SWEP.ChangeStateAccuracyMultiplier = 2.5
 SWEP.JumpAccuracyMultiplier = 5
-SWEP.WalkAccuracyMultiplier = 2
+SWEP.WalkAccuracyMultiplier = 1.75
 ----[[RANGE]]----
 SWEP.DisplayFalloff = nil
 SWEP.Primary.RangeFalloffLUT = {
 	bezier = true,
-	range_func = "quintic", -- "quintic" "cubic" "cosine" "sinusine" "linear"
+	range_func = "linear", -- "quintic" "cubic" "cosine" "sinusine" "linear"
 	units = "meters",
 	lut = {
 		{range = 0, damage = 1},
@@ -160,9 +156,9 @@ SWEP.Primary.RangeFalloffLUT = {
 }
 ----[[PENETRATION]]----
 SWEP.MaxPenetrationCounter = nil -- The maximum number of surface penetrations. You probably shouldn't touch this unless you need to remove penetration completely or limit it somehow
-SWEP.Primary.PenetrationPower = nil -- This control how much we can penetrate various surfaces in hammer units. 400 hammer units = 1. 800 hammer units = 0.5
-SWEP.Primary.PenetrationMultiplier = nil -- Defaults to 1. The LESSER this value is, the BETTER is penetration
-----[[MOBILITY RELATED]]----
+SWEP.Primary.PenetrationPower = 0.5 -- This control how much we can penetrate various surfaces in hammer units. 400 hammer units = 1. 800 hammer units = 0.5
+SWEP.Primary.PenetrationMultiplier = 0.05 -- Defaults to 1. The LESSER this value is, the BETTER is penetration
+----[[MOBILITY]]----
 SWEP.IronSightsMoveSpeed = 0.85
 ----[[VIEWMODEL]]----
 SWEP.ViewModel = "models/weapons/tfa_grovez/ak12/c_ak12.mdl" -- Viewmodel path
@@ -176,37 +172,52 @@ SWEP.VMAng = Vector(0, 0, 0)
 SWEP.RunSightsPos = Vector(0, 0, 0)
 SWEP.RunSightsAng = Vector(0, 0, 0)
 --Position when walking
-SWEP.WalkPos = Vector(-0.25, -0.75, -0.25)
-SWEP.WalkAng = Angle(1, 2, -3)
+SWEP.WalkPos = Vector(-0.254, -0.728, -0.369)
+SWEP.WalkAng = Angle(1.246, 2.149, -3.468)
 --Position when crouching
-SWEP.CrouchPos = Vector(-0.577, -1.121, -1.571)
-SWEP.CrouchAng = Vector(0, 0, -6.027)
+SWEP.CrouchPos = Vector(-0.737, -1.323, -1.412)
+SWEP.CrouchAng = Vector(-1.119, -0.919, -5.384)
 --Inspection position
 SWEP.InspectPos = Vector(10.877, -9.705, 3.171)
 SWEP.InspectAng = Vector(47.527, 50.993, 56.782)
 --Safety position
-SWEP.SafetyPos = Vector(0.522, -1.721, -3.036)
-SWEP.SafetyAng = Vector(-14.344, 37.99, -33.807)
+SWEP.SafetyPos = Vector(0.193, -3.734, -3.873)
+SWEP.SafetyAng = Vector(-12.733, 38.917, -40.48)
 --Nearwall offset
-SWEP.NearWallPos = Vector(0.091287083923817, -0.4564354121685, -0.18257416784763)
-SWEP.NearWallPosADS = Vector(SWEP.NearWallPos.x * 0.2, SWEP.NearWallPos.y * 0.5, SWEP.NearWallPos.z * 0.3)
+SWEP.NearWallPos = Vector(0, 0, 0)
+SWEP.NearWallPosADS = Vector(0, 0, 0)
 --Misc
 SWEP.VMPos_Additive = false
-SWEP.CenteredPos = nil -- The viewmodel positional offset, used for centering. Leave nil to autodetect using ironsights
-SWEP.CenteredAng = nil -- The viewmodel angular offset, used for centering. Leave nil to autodetect using ironsights
-SWEP.Bodygroups_V = {}
+SWEP.CenteredPos = nil
+SWEP.CenteredAng = nil
+SWEP.Bodygroups_V = {
+	--["Mag1_Ammo"] = 0,
+	--["Mag2_Ammo"] = 0,
+	--["Mag1"] = 0,
+	--["Mag2"] = 0,
+	--["Pistolgrip"] = 0,
+	--["Handguard"] = 0,
+	["Modkit_Left"] = 1,
+	["Modkit_Right"] = 1,
+	--["Dustcover"] = 0,
+	["Sight"] = 1,
+	["Muzzlebrake"] = 1,
+	["Stock_Base"] = 2,
+	["Stock"] = 2,
+}
 SWEP.AllowIronSightsDoF = true
 SWEP.IronSightsReloadEnabled = true
 SWEP.IronSightsReloadLock = false
-SWEP.ToCrouchTime = 0.3
 ----[[IRON SIGHTS]]----
 SWEP.Secondary.IronFOV = 80 -- View FOV
 SWEP.IronViewModelFOV = 65 -- Viewmodel FOV
-SWEP.IronSightsPos = Vector(-2.67, -1.5, 0.75)
-SWEP.IronSightsAng = Vector(-1.03235, 0.206872, 5.43371)
+SWEP.IronSightsPos = Vector(0, 1, 0)
+SWEP.IronSightsAng = Vector(0, 0, 0)
+SWEP.IronSightsOffsetSmoothing = 7.5
 --Offsets
-SWEP.SightOffset_PK120 = Vector(0.12, 0, -1.485)
-SWEP.SightOffset_UH1_GEN2 = Vector(0.12, 0, -1.19)
+SWEP.SightOffset_Nil = Vector(0, 0, 0)
+SWEP.SightOffset_PK120 = SWEP.SightOffset_Nil + Vector(0, -1, -1.41)
+SWEP.SightOffset_UH1_GEN2 = SWEP.SightOffset_Nil + Vector(0, -1, -1.34)
 ----[[WORLDMODEL]]----
 SWEP.WorldModel = "" -- Weapon world model path
 SWEP.Bodygroups_W = {}
@@ -235,6 +246,8 @@ SWEP.ShotgunEmptyAnim_Shell = true -- Enable insertion of a shell directly into 
 SWEP.ShotgunStartAnimShell = false -- Shotgun start anim inserts shell
 SWEP.ShellTime = 0.35 -- For looped reloads, how long it take to insert extra round into weapon
 ----[[ANIMS]]----
+SWEP.ToCrouchTime = 0.35
+SWEP.CanReloadWhileSprinting = false
 SWEP.Idle_Mode = TFA.Enum.IDLE_BOTH -- "IDLE_DISABLED" "IDLE_LUA" "IDLE_ANI" "IDLE_BOTH"
 SWEP.Sights_Mode = TFA.Enum.LOCOMOTION_HYBRID -- "LOCOMOTION_ANI" "LOCOMOTION_LUA" "LOCOMOTION_HYBRID"
 SWEP.Sprint_Mode = TFA.Enum.LOCOMOTION_ANI -- "LOCOMOTION_ANI" "LOCOMOTION_LUA" "LOCOMOTION_HYBRID"
@@ -258,7 +271,6 @@ SWEP.SprintAnimation = {
 		["transition"] = true
 	}
 }
-
 --Animation / sequence control
 SWEP.Idle_Blend = 0.25 -- Start an idle this far early into the end of a transition
 SWEP.Idle_Smooth = 0.05 -- Start an idle this far early into the end of another animation
@@ -296,17 +308,6 @@ SWEP.TracerCount = 1 -- 0 disables, otherwise, 1 in X chance
 --Impact Effects
 SWEP.ImpactEffect = nil -- Impact Effect
 SWEP.ImpactDecal = nil -- Impact Decal
-----[[FLASHLIGHT]]----
-SWEP.HasFlashlight = false
-SWEP.FlashlightAttachment = 0
-SWEP.FlashlightDistance = 0
-SWEP.FlashlightBrightness = 0
-SWEP.FlashlightFOV = 0
-SWEP.FlashlightSoundToggleOn = Sound("")
-SWEP.FlashlightSoundToggleOff = Sound("")
-SWEP.FlashlightMaterial = "effects/flashlight001"
-----[[LASER]]----
---SWEP.LaserDistance = 10000
 ----[[MAG DROP]]----
 SWEP.MagImpactSounds = {
 	"weapons/tfa_grovez/shared/mag_drop/concrete/iw8_phys_mag_drop_ak_poly_concrete_01.wav",
@@ -316,7 +317,7 @@ SWEP.MagImpactSounds = {
 	"weapons/tfa_grovez/shared/mag_drop/concrete/iw8_phys_mag_drop_ak_poly_concrete_05.wav",
 	"weapons/tfa_grovez/shared/mag_drop/concrete/iw8_phys_mag_drop_ak_poly_concrete_06.wav"
 }
-SWEP.MagModel = "models/weapons/tfa_grovez/ak12/mag/ak12_mag_default.mdl"
+SWEP.MagModel = "models/weapons/tfa_grovez/ak12/w_ak12_mag.mdl"
 SWEP.MagBodygroups = "000"
 SWEP.MagSkin = 0
 SWEP.MagDropSrcForward = 11
@@ -331,18 +332,6 @@ SWEP.MagRemovalTimer = 60
 ----[[EVENT TABLE FUNCTIONS]]----
 function SWEP:AK12_Mag1_Update(vm)
 	if self:Clip1() <= 1 then
-		self.Bodygroups_V[2] = 0
-	elseif self:Clip1() == 2 then
-		self.Bodygroups_V[2] = 1
-	elseif self:Clip1() == 3 then
-		self.Bodygroups_V[2] = 2
-	elseif self:Clip1() >= 4 then
-		self.Bodygroups_V[2] = 3
-	end
-end
-
-function SWEP:AK12_Mag2_Update(vm)
-	if self:Clip1() <= 1 then
 		self.Bodygroups_V[1] = 0
 	elseif self:Clip1() == 2 then
 		self.Bodygroups_V[1] = 1
@@ -353,12 +342,24 @@ function SWEP:AK12_Mag2_Update(vm)
 	end
 end
 
+function SWEP:AK12_Mag2_Update(vm)
+	if self:Clip1() <= 1 then
+		self.Bodygroups_V[2] = 0
+	elseif self:Clip1() == 2 then
+		self.Bodygroups_V[2] = 1
+	elseif self:Clip1() == 3 then
+		self.Bodygroups_V[2] = 2
+	elseif self:Clip1() >= 4 then
+		self.Bodygroups_V[2] = 3
+	end
+end
+
 function SWEP:AK12_Mag1_Full(vm)
-	self.Bodygroups_V[2] = 3
+	self.Bodygroups_V[1] = 3
 end
 
 function SWEP:AK12_Mag2_Full(vm)
-	self.Bodygroups_V[1] = 3
+	self.Bodygroups_V[2] = 3
 end
 ----[[EVENT TABLE]]----
 SWEP.EventTable = {
@@ -426,23 +427,56 @@ SWEP.EventTable = {
 	}
 }
 ----[[AKIMBO]]----
-SWEP.Akimbo = false -- Akimbo gun?  Alternates between primary and secondary attacks
-SWEP.AkimboHUD = false -- Draw holographic HUD for both weapons?
+SWEP.Akimbo = false
+SWEP.AkimboHUD = false
+----[[FLASHLIGHT]]----
+SWEP.HasFlashlight = false
+SWEP.FlashlightAttachment = 0
+SWEP.FlashlightDistance = 0
+SWEP.FlashlightBrightness = 0
+SWEP.FlashlightFOV = 0
+SWEP.FlashlightSoundToggleOn = Sound("")
+SWEP.FlashlightSoundToggleOff = Sound("")
+SWEP.FlashlightMaterial = "effects/flashlight001"
+--Flashlight slot related
+SWEP.FlashlightSlot = 0
+SWEP.FlashlightSlot0Pos = Vector(0, 0, 0)
+SWEP.FlashlightSlot0Ang = Angle(0, 0, 0)
+SWEP.FlashlightSlot1Pos = Vector(0, 0, 0)
+SWEP.FlashlightSlot1Ang = Angle(0, 0, 0)
+SWEP.FlashlightSlot2Pos = Vector(0, 0, 0)
+SWEP.FlashlightSlot2Ang = Angle(0, 0, 0)
+SWEP.FlashlightSlot3Pos = Vector(0, 0, 0)
+SWEP.FlashlightSlot3Ang = Angle(0, 0, 0)
+SWEP.FlashlightSlot4Pos = Vector(0, 0, 0)
+SWEP.FlashlightSlot4Ang = Angle(0, 0, 0)
+SWEP.FlashlightSlot5Pos = Vector(0, 0, 0)
+SWEP.FlashlightSlot5Ang = Angle(0, 0, 0)
+--Lightsource offset related
+SWEP.FlashlightLightsourcePos = Vector(0, 0, 0)
+SWEP.FlashlightLightsourceAng = Angle(0, 0, 0)
+SWEP.FlashlightLightsourcePos_M300CScout = Vector(-2.6, 0, 0.63)
+SWEP.FlashlightLightsourceAng_M300CScout = Angle(0, -90, 0)
+SWEP.FlashlightLightsourcePos_M300CThorntail = Vector(-5.3, -1.075, 0.29)
+SWEP.FlashlightLightsourceAng_M300CThorntail = Angle(0, -90, 0)
+----[[LASER]]----
+SWEP.LaserDistance = 10000
 ----[[VIEWMODELELEMENTS]]----
 SWEP.ViewModelBoneMods = {
-	["muzzle"] = {scale = Vector(1, 1, 1), pos = Vector(0, 3.25, 0), angle = Angle(0, 0, 0)}
+	["tag_flashlight_lightsource"] = {scale = Vector(1, 1, 1), pos = Vector(0, 0, 0), angle = Angle(0, 0, 0)},
+	["tag_flashlight"] = {scale = Vector(1, 1, 1), pos = Vector(0, 0, 0), angle = Angle(0, 0, 0)}
 }
 
 SWEP.VElements = {
 	----[[SCOPES]]----
 	["scope_pk120"] = {
 		type = "Model",
-		model = "models/weapons/tfa_grovez/mods/scopes/scope_pk120/model.mdl",
-		bone = "tag_scope",
+		model = "models/weapons/tfa_grovez/mods/scopes/scope_pk120/scope.mdl",
+		bone = "tag_weapon",
 		rel = "",
-		pos = Vector(-0.055, 0.59, -0.02),
-		angle = Angle(0, 90, 180),
-		size = Vector(1.15, 1.15, 1.15),
+		pos = Vector(0, 4.25, 4.72),
+		angle = Angle(0, -90, 0),
+		size = Vector(1.125, 1.125, 1.125),
 		color = Color(255, 255, 255, 255),
 		surpresslightning = false,
 		material = "",
@@ -463,12 +497,12 @@ SWEP.VElements = {
 	},
 	["scope_uh1_gen2"] = {
 		type = "Model",
-		model = "models/weapons/tfa_grovez/mods/scopes/scope_uh1_gen2/model.mdl",
-		bone = "tag_scope",
+		model = "models/weapons/tfa_grovez/mods/scopes/scope_uh1_gen2/scope.mdl",
+		bone = "tag_weapon",
 		rel = "",
-		pos = Vector(-0.0325, 0.59, -0.02),
-		angle = Angle(0, 90, 180),
-		size = Vector(1.025, 1.025, 1.025),
+		pos = Vector(0, 4.25, 4.72),
+		angle = Angle(0, -90, 0),
+		size = Vector(1.125, 1.125, 1.125),
 		color = Color(255, 255, 255, 255),
 		surpresslightning = false,
 		material = "",
@@ -487,15 +521,15 @@ SWEP.VElements = {
 		draw_func_outer = DrawSingleReticle(),
 		active = false
 	},
-	----[[TOP_RAIL]]----
-	["flashlight_m300c_thorntail_black"] = {
+	----[[TACTICAL]]----
+	["flashlight_m300c_scout"] = {
 		type = "Model",
-		model = "models/weapons/tfa_grovez/mods/tactical/flashlight_surefire_m300c_thorntail/model.mdl",
-		bone = "tag_tactical_top",
+		model = "models/weapons/tfa_grovez/mods/tactical/flashlight_surefire_m300c_scout/tactical.mdl",
+		bone = "tag_flashlight",
 		rel = "",
-		pos = Vector(-0.02, 1.75, -0.005),
-		angle = Angle(0, -90, 180),
-		size = Vector(1.05, 1.05, 1.05),
+		pos = Vector(0, 0, 0),
+		angle = Angle(0, 0, 0),
+		size = Vector(1.1, 1.1, 1.1),
 		color = Color(255, 255, 255, 255),
 		surpresslightning = false,
 		material = "",
@@ -504,31 +538,14 @@ SWEP.VElements = {
 		active = false,
 		bonemerge = false
 	},
-	["flashlight_m300c_thorntail_tan"] = {
+	["flashlight_m300c_thorntail"] = {
 		type = "Model",
-		model = "models/weapons/tfa_grovez/mods/tactical/flashlight_surefire_m300c_thorntail/model.mdl",
-		bone = "tag_tactical_top",
+		model = "models/weapons/tfa_grovez/mods/tactical/flashlight_surefire_m300c_thorntail/tactical.mdl",
+		bone = "tag_flashlight",
 		rel = "",
-		pos = Vector(-0.02, 1.75, -0.005),
-		angle = Angle(0, -90, 180),
-		size = Vector(1.05, 1.05, 1.05),
-		color = Color(255, 255, 255, 255),
-		surpresslightning = false,
-		material = "",
-		skin = 1,
-		bodygroup = {},
-		active = false,
-		bonemerge = false
-	},
-	----[[RIGHT_RAIL]]----
-	["flashlight_m300c_scout_black"] = {
-		type = "Model",
-		model = "models/weapons/tfa_grovez/mods/tactical/flashlight_surefire_m300c_scout/model.mdl",
-		bone = "tag_tactical_right",
-		rel = "",
-		pos = Vector(0.02, 0.1, 0.015),
-		angle = Angle(0, -90, 90),
-		size = Vector(1.05, 1.05, 1.05),
+		pos = Vector(0, 0, 0),
+		angle = Angle(0, 0, 0),
+		size = Vector(1.1, 1.1, 1.1),
 		color = Color(255, 255, 255, 255),
 		surpresslightning = false,
 		material = "",
@@ -537,37 +554,105 @@ SWEP.VElements = {
 		active = false,
 		bonemerge = false
 	},
-	["flashlight_m300c_scout_tan"] = {
-		type = "Model",
-		model = "models/weapons/tfa_grovez/mods/tactical/flashlight_surefire_m300c_scout/model.mdl",
-		bone = "tag_tactical_right",
-		rel = "",
-		pos = Vector(0.02, 0.1, 0.015),
-		angle = Angle(0, -90, 90),
-		size = Vector(1.05, 1.05, 1.05),
-		color = Color(255, 255, 255, 255),
-		surpresslightning = false,
-		material = "",
-		skin = 1,
-		bodygroup = {},
-		active = false,
-		bonemerge = false
-	}
 }
 ----[[ATTACHMENTS]]----
 SWEP.Attachments = {
-	[1] = {atts = {"grovez_scope_pk120", "grovez_scope_uh1_gen2"}}, -- Scopes
-	[2] = {atts = {"grovez_flashlight_surefire_m300c_thorntail_black", "grovez_flashlight_surefire_m300c_thorntail_tan"}}, -- Top Rail
-	[3] = {atts = {"grovez_flashlight_surefire_m300c_scout_black", "grovez_flashlight_surefire_m300c_scout_tan"}}, -- Right Rail
-	[4] = {atts = {"grovez_stock_ak_evo"}}, -- Stocks
-	[99] = {atts = {"grovez_ak12_skin1", "grovez_ak12_skin2"}} -- Skins
+	--[1488] = {default = "a", sel = "a", atts = {"a", "b"}},
+
+	[1] = {atts = {"grovez_scope_pk120", "grovez_scope_uh1_gen2"}},
+	[2] = {atts = {"grovez_flashlight_surefire_m300c_scout_black", "grovez_flashlight_surefire_m300c_scout_tan", "grovez_flashlight_surefire_m300c_thorntail_black", "grovez_flashlight_surefire_m300c_thorntail_tan"}},
+
+	[40] = {default = "grovez_ak12_flashlight_position_3", atts = {"grovez_ak12_flashlight_position_1", "grovez_ak12_flashlight_position_2", "grovez_ak12_flashlight_position_3", "grovez_ak12_flashlight_position_4", "grovez_ak12_flashlight_position_5"}},
+
+	[50] = {default = "grovez_ak12_handguard_std", atts = {"grovez_ak12_handguard_std"}},
+	[51] = {default = "grovez_ak12_pistolgrip_std", atts = {"grovez_ak12_pistolgrip_std"}},
+	[52] = {default = "grovez_ak12_mag_std", atts = {"grovez_ak12_mag_std"}},
+	[53] = {default = "grovez_ak12_dustcover_std", atts = {"grovez_ak12_dustcover_std"}},
+	[54] = {default = "grovez_ak12_stock_std", atts = {"grovez_ak12_stock_std", "grovez_ak12_stock_ak_evo"}},
+	[55] = {atts = {"grovez_ak12_rail_left_std"}},
+	[56] = {sel = "grovez_ak12_rail_right_std", atts = {"grovez_ak12_rail_right_std"}},
+	[57] = {default = "grovez_ak12_muzzlebrake_std", atts = {"grovez_ak12_muzzlebrake_std"}},
+	[58] = {default = "grovez_ak12_sight_std", atts = {"grovez_ak12_sight_std"}},
+
+	[99] = {atts = {"grovez_ak12_skin1", "grovez_ak12_skin2"}}
 }
-SWEP.AttachmentDependencies = {}
+SWEP.AttachmentDependencies = {
+	["grovez_ak12_flashlight_position_1"] = {"grovez_ak12_rail_right_std"},
+	["grovez_ak12_flashlight_position_2"] = {"grovez_ak12_rail_left_std"},
+}
 SWEP.AttachmentExclusions = {
-	["grovez_flashlight_surefire_m300c_thorntail_black"] = {"grovez_flashlight_surefire_m300c_scout_black", "grovez_flashlight_surefire_m300c_scout_tan"},
-	["grovez_flashlight_surefire_m300c_thorntail_tan"] = {"grovez_flashlight_surefire_m300c_scout_black", "grovez_flashlight_surefire_m300c_scout_tan"}
+	["grovez_flashlight_surefire_m300c_scout_black"] = {"grovez_ak12_flashlight_position_3", "grovez_ak12_flashlight_position_4", "grovez_ak12_flashlight_position_5"},
+	["grovez_flashlight_surefire_m300c_scout_tan"] = {"grovez_ak12_flashlight_position_3", "grovez_ak12_flashlight_position_4", "grovez_ak12_flashlight_position_5"},
 }
 SWEP.AttachmentTableOverride = {}
 SWEP.AttachmentIconOverride = {}
 
 DEFINE_BASECLASS(SWEP.Base)
+
+hook.Add("TFA_Attachment_Attached", "TFA_AK12_Attachment_Attached", function(wepom, attid, atttable, category, attindex, forced)
+	if atttable.ChangeFlashlightPosition == true then
+		if wepom.FlashlightSlot == 0 then
+			wepom.ViewModelBoneMods["tag_flashlight"].pos = wepom.FlashlightSlot0Pos
+			wepom.ViewModelBoneMods["tag_flashlight"].angle = wepom.FlashlightSlot0Ang
+		end
+
+		if wepom.FlashlightSlot == 1 then
+			wepom.ViewModelBoneMods["tag_flashlight"].pos = wepom.FlashlightSlot1Pos
+			wepom.ViewModelBoneMods["tag_flashlight"].angle = wepom.FlashlightSlot1Ang
+		end
+
+		if wepom.FlashlightSlot == 2 then
+			wepom.ViewModelBoneMods["tag_flashlight"].pos = wepom.FlashlightSlot2Pos
+			wepom.ViewModelBoneMods["tag_flashlight"].angle = wepom.FlashlightSlot2Ang
+		end
+
+		if wepom.FlashlightSlot == 3 then
+			wepom.ViewModelBoneMods["tag_flashlight"].pos = wepom.FlashlightSlot3Pos
+			wepom.ViewModelBoneMods["tag_flashlight"].angle = wepom.FlashlightSlot3Ang
+		end
+
+		if wepom.FlashlightSlot == 4 then
+			wepom.ViewModelBoneMods["tag_flashlight"].pos = wepom.FlashlightSlot4Pos
+			wepom.ViewModelBoneMods["tag_flashlight"].angle = wepom.FlashlightSlot4Ang
+		end
+
+		if wepom.FlashlightSlot == 5 then
+			wepom.ViewModelBoneMods["tag_flashlight"].pos = wepom.FlashlightSlot5Pos
+			wepom.ViewModelBoneMods["tag_flashlight"].angle = wepom.FlashlightSlot5Ang
+		end
+	end
+end)
+
+hook.Add("TFA_Attachment_Detached", "TFA_AK12_Attachment_Detached", function(wepom, attid, atttable, category, attindex, forced)
+	if atttable.ChangeFlashlightPosition == true then
+		if wepom.FlashlightSlot == 0 then
+			wepom.ViewModelBoneMods["tag_flashlight"].pos = wepom.FlashlightSlot0Pos
+			wepom.ViewModelBoneMods["tag_flashlight"].angle = wepom.FlashlightSlot0Ang
+		end
+
+		if wepom.FlashlightSlot == 1 then
+			wepom.ViewModelBoneMods["tag_flashlight"].pos = wepom.FlashlightSlot1Pos
+			wepom.ViewModelBoneMods["tag_flashlight"].angle = wepom.FlashlightSlot1Ang
+		end
+
+		if wepom.FlashlightSlot == 2 then
+			wepom.ViewModelBoneMods["tag_flashlight"].pos = wepom.FlashlightSlot2Pos
+			wepom.ViewModelBoneMods["tag_flashlight"].angle = wepom.FlashlightSlot2Ang
+		end
+
+		if wepom.FlashlightSlot == 3 then
+			wepom.ViewModelBoneMods["tag_flashlight"].pos = wepom.FlashlightSlot3Pos
+			wepom.ViewModelBoneMods["tag_flashlight"].angle = wepom.FlashlightSlot3Ang
+		end
+
+		if wepom.FlashlightSlot == 4 then
+			wepom.ViewModelBoneMods["tag_flashlight"].pos = wepom.FlashlightSlot4Pos
+			wepom.ViewModelBoneMods["tag_flashlight"].angle = wepom.FlashlightSlot4Ang
+		end
+
+		if wepom.FlashlightSlot == 5 then
+			wepom.ViewModelBoneMods["tag_flashlight"].pos = wepom.FlashlightSlot5Pos
+			wepom.ViewModelBoneMods["tag_flashlight"].angle = wepom.FlashlightSlot5Ang
+		end
+	end
+end)
