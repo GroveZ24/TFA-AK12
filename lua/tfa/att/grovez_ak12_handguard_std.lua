@@ -44,10 +44,6 @@ function ATTACHMENT:Attach(wep)
 	wep.FlashlightSlot5Ang = Angle(0, 90, 180)
 end
 
-function ATTACHMENT:Detach(wep)
-	
-end
-
 if not TFA_ATTACHMENT_ISUPDATING then
 	TFAUpdateAttachments()
 end

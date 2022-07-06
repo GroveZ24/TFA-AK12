@@ -184,8 +184,8 @@ SWEP.InspectAng = Vector(47.527, 50.993, 56.782)
 SWEP.SafetyPos = Vector(0.193, -3.734, -3.873)
 SWEP.SafetyAng = Vector(-12.733, 38.917, -40.48)
 --Nearwall offset
-SWEP.NearWallPos = Vector(0, 0, 0)
-SWEP.NearWallPosADS = Vector(0, 0, 0)
+--SWEP.NearWallPos = Vector(0, 0, 0)
+--SWEP.NearWallPosADS = Vector(0, 0, 0)
 --Misc
 SWEP.VMPos_Additive = false
 SWEP.CenteredPos = nil
@@ -442,16 +442,16 @@ SWEP.FlashlightMaterial = "effects/flashlight001"
 SWEP.FlashlightSlot = 0
 SWEP.FlashlightSlot0Pos = Vector(0, 0, 0)
 SWEP.FlashlightSlot0Ang = Angle(0, 0, 0)
-SWEP.FlashlightSlot1Pos = Vector(0, 0, 0)
-SWEP.FlashlightSlot1Ang = Angle(0, 0, 0)
-SWEP.FlashlightSlot2Pos = Vector(0, 0, 0)
-SWEP.FlashlightSlot2Ang = Angle(0, 0, 0)
-SWEP.FlashlightSlot3Pos = Vector(0, 0, 0)
-SWEP.FlashlightSlot3Ang = Angle(0, 0, 0)
-SWEP.FlashlightSlot4Pos = Vector(0, 0, 0)
-SWEP.FlashlightSlot4Ang = Angle(0, 0, 0)
-SWEP.FlashlightSlot5Pos = Vector(0, 0, 0)
-SWEP.FlashlightSlot5Ang = Angle(0, 0, 0)
+SWEP.FlashlightSlot1Pos = Vector(-0.99, -13.8, 3.775)
+SWEP.FlashlightSlot1Ang = Angle(0, 90, -90)
+SWEP.FlashlightSlot2Pos = Vector(0.99, -13.8, 3.775)
+SWEP.FlashlightSlot2Ang = Angle(0, 90, 90)
+SWEP.FlashlightSlot3Pos = Vector(0, -13.8, 4.72)
+SWEP.FlashlightSlot3Ang = Angle(0, 90, 0)
+SWEP.FlashlightSlot4Pos = Vector(0, -11.12, 4.72)
+SWEP.FlashlightSlot4Ang = Angle(0, 90, 0)
+SWEP.FlashlightSlot5Pos = Vector(0, -13.8, 1.7)
+SWEP.FlashlightSlot5Ang = Angle(0, 90, 180)
 --Lightsource offset related
 SWEP.FlashlightLightsourcePos = Vector(0, 0, 0)
 SWEP.FlashlightLightsourceAng = Angle(0, 0, 0)
@@ -656,3 +656,5 @@ hook.Add("TFA_Attachment_Detached", "TFA_AK12_Attachment_Detached", function(wep
 		end
 	end
 end)
+
+--https://sun9-13.userapi.com/impg/IZM7bQiMVfYurDgkLwCXKdmns43rg6Vo_fPBBw/gtN-QxYrZ1E.jpg?size=1140x1280&quality=96&sign=ebfcbf62498c574cb98643d7d552e713&type=album
