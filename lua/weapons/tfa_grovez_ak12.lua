@@ -240,6 +240,7 @@ SWEP.ShellTime = 0.35 -- For looped reloads, how long it take to insert extra ro
 ----[[ANIMS]]----
 SWEP.ToCrouchTime = 0.35
 SWEP.CanReloadWhileSprinting = false
+SWEP.UseModSwitchProceduralAnimation = true
 SWEP.Idle_Mode = TFA.Enum.IDLE_BOTH -- "IDLE_DISABLED" "IDLE_LUA" "IDLE_ANI" "IDLE_BOTH"
 SWEP.Sights_Mode = TFA.Enum.LOCOMOTION_HYBRID -- "LOCOMOTION_ANI" "LOCOMOTION_LUA" "LOCOMOTION_HYBRID"
 SWEP.Sprint_Mode = TFA.Enum.LOCOMOTION_ANI -- "LOCOMOTION_ANI" "LOCOMOTION_LUA" "LOCOMOTION_HYBRID"
