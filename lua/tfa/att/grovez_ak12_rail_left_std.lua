@@ -11,7 +11,7 @@ ATTACHMENT.Description = {
 
 ATTACHMENT.WeaponTable = {
 	["Bodygroups_V"] = {
-		["Modkit_Left"] = 0
+		["Mount_Left"] = 0
 	},
 	["Weight"] = function(wep, val) return val + 0.045 end
 }

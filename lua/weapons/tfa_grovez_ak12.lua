@@ -36,8 +36,8 @@ SWEP.Primary.ProjectileVelocity = 0 -- Entity to shoot's velocity
 SWEP.Primary.ProjectileModel = nil -- Entity to shoot's model
 ----[[CUSTOM STATS]]----
 SWEP.EditedTFABase = true
-SWEP.Ergonomics = 40
-SWEP.Weight = 2.1
+SWEP.Ergonomics = 50
+SWEP.Weight = 3.3
 ----[[TFA BASE BASIC STATS]]----
 SWEP.Primary.Knockback = 0 -- Autodetected if nil; this is the velocity kickback
 SWEP.Primary.DryFireDelay = 0.5 -- How long you have to wait after firing your last shot before a dryfire animation can play
@@ -191,19 +191,8 @@ SWEP.VMPos_Additive = false
 SWEP.CenteredPos = nil
 SWEP.CenteredAng = nil
 SWEP.Bodygroups_V = {
-	--["Mag1_Ammo"] = 0,
-	--["Mag2_Ammo"] = 0,
-	--["Mag1"] = 0,
-	--["Mag2"] = 0,
-	--["Pistolgrip"] = 0,
-	--["Handguard"] = 0,
-	["Modkit_Left"] = 1,
-	["Modkit_Right"] = 1,
-	--["Dustcover"] = 0,
-	["Sight"] = 1,
-	["Muzzlebrake"] = 1,
-	["Stock_Base"] = 2,
-	["Stock"] = 2,
+	["Mount_Right"] = 1,
+	["Mount_Left"] = 1,
 }
 SWEP.AllowIronSightsDoF = true
 SWEP.IronSightsReloadEnabled = true
@@ -213,7 +202,7 @@ SWEP.Secondary.IronFOV = 80 -- View FOV
 SWEP.IronViewModelFOV = 65 -- Viewmodel FOV
 SWEP.IronSightsPos = Vector(0, 1, 0)
 SWEP.IronSightsAng = Vector(0, 0, 0)
-SWEP.IronSightsOffsetSmoothing = 7.5
+SWEP.IronSightsOffsetSmoothing = 10
 --Offsets
 SWEP.SightOffset_Nil = Vector(0, 0, 0)
 SWEP.SightOffset_PK120 = SWEP.SightOffset_Nil + Vector(0, -0.75, -1.41)
@@ -222,21 +211,21 @@ SWEP.SightOffset_T2_Unity = SWEP.SightOffset_Nil + Vector(0, -0.5, -1.8)
 SWEP.SightOffset_T2_Tall = SWEP.SightOffset_Nil + Vector(0, -0.5, -1.1)
 SWEP.SightOffset_T2_Short = SWEP.SightOffset_Nil + Vector(0, -0.5, -0.35)
 ----[[WORLDMODEL]]----
-SWEP.WorldModel = "" -- Weapon world model path
+SWEP.WorldModel = "models/weapons/tfa_grovez/ak12/w_ak12.mdl" -- Weapon world model path
 SWEP.Bodygroups_W = {}
 SWEP.HoldType = "ar2" -- "normal" "melee" "melee2" "fist" "knife" "smg" "ar2" "pistol" "rpg" "physgun" "grenade" "shotgun" "crossbow" "slam" "passive"
 SWEP.IronSightHoldTypeOverride = nil -- Defaults to nothing (disabled)
 SWEP.SprintHoldTypeOverride = nil -- Defaults to nothing (disabled)
 SWEP.Offset = {
 	Pos = {
-		Up = 0,
-		Right = 0,
-		Forward = 0
+		Up = -1.25,
+		Right = 1,
+		Forward = 5
 	},
 	Ang = {
-		Up = -1,
-		Right = -2,
-		Forward = 178
+		Up = 2,
+		Right = -5,
+		Forward = 180
 	},
 	Scale = 1
 }
@@ -645,15 +634,9 @@ SWEP.Attachments = {
 
 	[40] = {default = "grovez_ak12_flashlight_position_3", atts = {"grovez_ak12_flashlight_position_1", "grovez_ak12_flashlight_position_2", "grovez_ak12_flashlight_position_3", "grovez_ak12_flashlight_position_4", "grovez_ak12_flashlight_position_5"}},
 
-	[50] = {default = "grovez_ak12_handguard_std", atts = {"grovez_ak12_handguard_std"}},
-	[51] = {default = "grovez_ak12_pistolgrip_std", atts = {"grovez_ak12_pistolgrip_std"}},
-	[52] = {default = "grovez_ak12_mag_std", atts = {"grovez_ak12_mag_std"}},
-	[53] = {default = "grovez_ak12_dustcover_std", atts = {"grovez_ak12_dustcover_std"}},
 	[54] = {default = "grovez_ak12_stock_std", atts = {"grovez_ak12_stock_std", "grovez_ak12_stock_ak_evo"}},
 	[55] = {atts = {"grovez_ak12_rail_left_std"}},
 	[56] = {sel = "grovez_ak12_rail_right_std", atts = {"grovez_ak12_rail_right_std"}},
-	[57] = {default = "grovez_ak12_muzzlebrake_std", atts = {"grovez_ak12_muzzlebrake_std"}},
-	[58] = {default = "grovez_ak12_sight_std", atts = {"grovez_ak12_sight_std"}},
 
 	[99] = {atts = {"grovez_ak12_skin1", "grovez_ak12_skin2"}}
 }

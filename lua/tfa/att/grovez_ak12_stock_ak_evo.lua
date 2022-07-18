@@ -16,6 +16,10 @@ ATTACHMENT.WeaponTable = {
 		["Stock_Base"] = 1,
 		["Stock"] = 1,
 	},
+	["Bodygroups_W"] = {
+		["Stock_Base"] = 1,
+		["Stock"] = 1,
+	},
 	["Primary"] = {
 		["KickUp"] = function(wep, stat) return stat * 0.7 end,
 		["KickDown"] = function(wep, stat) return stat * 0.7 end,
