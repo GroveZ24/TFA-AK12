@@ -36,8 +36,8 @@ SWEP.Primary.ProjectileVelocity = 0 -- Entity to shoot's velocity
 SWEP.Primary.ProjectileModel = nil -- Entity to shoot's model
 ----[[CUSTOM STATS]]----
 SWEP.EditedTFABase = true
-SWEP.Ergonomics = 50
-SWEP.Weight = 3.3
+SWEP.Ergonomics = 55
+SWEP.Weight = 3.134
 ----[[TFA BASE BASIC STATS]]----
 SWEP.Primary.Knockback = 0 -- Autodetected if nil; this is the velocity kickback
 SWEP.Primary.DryFireDelay = 0.5 -- How long you have to wait after firing your last shot before a dryfire animation can play
@@ -111,7 +111,7 @@ SWEP.ScreenShakeFOVMultiplier = 1
 SWEP.ScreenShakeSpeedMultiplier = 1
 ----[[RECOIL]]----
 SWEP.Primary.KickUp = 0.3 -- This is the maximum upwards recoil (rise)
-SWEP.Primary.KickDown = 0.225 -- This is the maximum downwards recoil (skeet)
+SWEP.Primary.KickDown = 0.25 -- This is the maximum downwards recoil (skeet)
 SWEP.Primary.KickHorizontal = 0.15 -- This is the maximum sideways recoil (no real term)
 SWEP.Primary.StaticRecoilFactor = 0.35 -- Amount of recoil to directly apply to EyeAngles
 --Multipliers
@@ -125,15 +125,20 @@ SWEP.Primary.Spread = .025 -- This is hip-fire acuracy. Less is more (1 is horri
 SWEP.Primary.IronAccuracy = .0025 -- Ironsight accuracy, should be the same for shotguns
 SWEP.Primary.DisplaySpread = nil -- Defaults to true. Display spread on customization screen?
 SWEP.Primary.DisplayIronSpread = nil -- Defaults to Primary.DisplaySpread
-SWEP.Primary.SpreadMultiplierMax = 5 -- How far the spread can expand when you shoot
-SWEP.Primary.SpreadIncrement = 2.5 -- What percentage of the modifier is added on, per shot
-SWEP.Primary.SpreadRecovery = 20 -- How much the spread recovers, per second
+--SWEP.Primary.SpreadMultiplierMax = 3 -- How far the spread can expand when you shoot
+--SWEP.Primary.SpreadIncrement = 0.5 -- What percentage of the modifier is added on, per shot
+--SWEP.Primary.SpreadRecovery = 4 -- How much the spread recovers, per second
 SWEP.Primary.SpreadRecoveryDelay = 0 -- Delay in seconds before spread starts to recover
+
+SWEP.UseCustomSpreadCalculationAlgorithm = true
+SWEP.Primary.SpreadMultiplierMaxCustom = 3 -- How far the spread can expand when you shoot
+SWEP.Primary.SpreadIncrementCustom = 0.5 -- What percentage of the modifier is added on, per shot
+SWEP.Primary.SpreadRecoveryCustom = 4 -- How much the spread recovers, per second
 --Multipliers
 SWEP.CrouchAccuracyMultiplier = 0.75
 SWEP.ChangeStateAccuracyMultiplier = 2.5
 SWEP.JumpAccuracyMultiplier = 5
-SWEP.WalkAccuracyMultiplier = 1.75
+SWEP.WalkAccuracyMultiplier = 2.5
 ----[[RANGE]]----
 SWEP.DisplayFalloff = nil
 SWEP.Primary.RangeFalloffLUT = {
@@ -202,7 +207,7 @@ SWEP.Secondary.IronFOV = 80 -- View FOV
 SWEP.IronViewModelFOV = 65 -- Viewmodel FOV
 SWEP.IronSightsPos = Vector(0, 1, 0)
 SWEP.IronSightsAng = Vector(0, 0, 0)
-SWEP.IronSightsOffsetSmoothing = 10
+SWEP.IronSightsOffsetSmoothing = 11
 --Offsets
 SWEP.SightOffset_Nil = Vector(0, 0, 0)
 SWEP.SightOffset_PK120 = SWEP.SightOffset_Nil + Vector(0, -0.75, -1.41)
