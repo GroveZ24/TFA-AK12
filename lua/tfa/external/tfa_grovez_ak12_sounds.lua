@@ -1,7 +1,7 @@
 local path = "weapons/tfa_grovez/ak12/"
 local pref = "TFA_GROVEZ.AK12"
 
-TFA.AddSound(pref..".1", CHAN_AUTO, 1, 140, {99, 101}, path.."fire/ak12_fire.wav", ")")
+TFA.AddSound(pref..".1", CHAN_USER_BASE, 1, 140, {99, 101}, path.."fire/ak12_fire.wav", ")")
 
 TFA.AddSound(pref..".BoltGrab", CHAN_AUTO, 1, 50, {99, 101}, path.."ak12_bolt_grab.wav", ")")
 TFA.AddSound(pref..".BoltBack", CHAN_AUTO, 1, 50, {99, 101}, path.."ak12_bolt_back.wav", ")")

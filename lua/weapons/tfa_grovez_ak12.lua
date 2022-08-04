@@ -7,7 +7,7 @@ SWEP.Author = "GroveZ"
 SWEP.Contact = ""
 SWEP.Purpose = ""
 SWEP.Instructions = ""
-SWEP.Calibre = "5.45x39mm"
+SWEP.Caliber = "5.45x39mm"
 SWEP.GRAU = "6П70"
 SWEP.Country = "Russian Federation"
 SWEP.Spawnable = true
@@ -21,7 +21,7 @@ SWEP.SlotPos = 0
 SWEP.AutoSwitchTo = false
 SWEP.AutoSwitchFrom = false
 SWEP.Type = "Rifle"
-SWEP.Type_Displayed = "Assault Rifle"
+SWEP.Type_Displayed = "AR"
 ----[[BASIC STATS]]----
 SWEP.Primary.RPM = 700 -- This is in Rounds Per Minute / RPM
 SWEP.Primary.NumShots = 1 -- The number of shots the weapon fires
@@ -129,7 +129,7 @@ SWEP.Primary.DisplayIronSpread = nil -- Defaults to Primary.DisplaySpread
 --SWEP.Primary.SpreadIncrement = 0.5 -- What percentage of the modifier is added on, per shot
 --SWEP.Primary.SpreadRecovery = 4 -- How much the spread recovers, per second
 SWEP.Primary.SpreadRecoveryDelay = 0 -- Delay in seconds before spread starts to recover
-
+--Custom
 SWEP.UseCustomSpreadCalculationAlgorithm = true
 SWEP.Primary.SpreadMultiplierMaxCustom = 3 -- How far the spread can expand when you shoot
 SWEP.Primary.SpreadIncrementCustom = 0.5 -- What percentage of the modifier is added on, per shot
@@ -629,7 +629,7 @@ SWEP.VElements = {
 		bodygroup = {},
 		active = false,
 		bonemerge = false
-	},
+	}
 }
 ----[[ATTACHMENTS]]----
 SWEP.Attachments = {
