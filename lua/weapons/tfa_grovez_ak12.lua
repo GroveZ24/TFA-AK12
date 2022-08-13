@@ -463,7 +463,8 @@ SWEP.LaserDistance = 10000
 ----[[VIEWMODELELEMENTS]]----
 SWEP.ViewModelBoneMods = {
 	["tag_flashlight_lightsource"] = {scale = Vector(1, 1, 1), pos = Vector(0, 0, 0), angle = Angle(0, 0, 0)},
-	["tag_flashlight"] = {scale = Vector(1, 1, 1), pos = Vector(0, 0, 0), angle = Angle(0, 0, 0)}
+	["tag_flashlight"] = {scale = Vector(1, 1, 1), pos = Vector(0, 0, 0), angle = Angle(0, 0, 0)},
+	["muzzle"] = {scale = Vector(1, 1, 1), pos = Vector(0, -4.25, 0), angle = Angle(0, 0, 0)}
 }
 
 SWEP.VElements = {
