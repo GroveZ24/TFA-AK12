@@ -215,6 +215,7 @@ SWEP.SightOffset_UH1_GEN2 = SWEP.SightOffset_Nil + Vector(0, -1, -1.34)
 SWEP.SightOffset_T2_Unity = SWEP.SightOffset_Nil + Vector(0, -0.5, -1.8)
 SWEP.SightOffset_T2_Tall = SWEP.SightOffset_Nil + Vector(0, -0.5, -1.1)
 SWEP.SightOffset_T2_Short = SWEP.SightOffset_Nil + Vector(0, -0.5, -0.35)
+SWEP.SightOffset_LCO = SWEP.SightOffset_Nil + Vector(0, -0.75, -1.04)
 ----[[WORLDMODEL]]----
 SWEP.WorldModel = "models/weapons/tfa_grovez/ak12/w_ak12.mdl" -- Weapon world model path
 SWEP.Bodygroups_W = {}
@@ -597,6 +598,32 @@ SWEP.VElements = {
 		draw_func_outer = DrawSingleReticle(),
 		active = false
 	},
+	["scope_lco"] = {
+		type = "Model",
+		model = "models/weapons/tfa_grovez/mods/scopes/scope_lco/scope.mdl",
+		bone = "tag_weapon",
+		rel = "",
+		pos = Vector(0, 5, 4.72),
+		angle = Angle(0, -90, 0),
+		size = Vector(1.125, 1.125, 1.125),
+		color = Color(255, 255, 255, 255),
+		surpresslightning = false,
+		material = "",
+		skin = 0,
+		bodygroup = {},
+		active = false,
+		bonemerge = false
+	},
+	["scope_lco_lens"] = {
+		type = "Quad",
+		rel = "scope_lco",
+		bone = "mod_scope_reticle",
+		pos = Vector(0, 5, 0),
+		angle = Angle(180, 0, -90),
+		size = 0.125,
+		draw_func_outer = DrawSingleReticle(),
+		active = false
+	},
 	----[[TACTICAL]]----
 	["flashlight_m300c_scout"] = {
 		type = "Model",
@@ -635,7 +662,7 @@ SWEP.VElements = {
 SWEP.Attachments = {
 	--[1488] = {default = "a", sel = "a", atts = {"a", "b"}},
 
-	[1] = {atts = {"grovez_scope_pk120", "grovez_scope_uh1_gen2", "grovez_scope_t2_unity_black", "grovez_scope_t2_unity_tan", "grovez_scope_t2_tall", "grovez_scope_t2_short"}},
+	[1] = {atts = {"grovez_scope_pk120", "grovez_scope_uh1_gen2", "grovez_scope_t2_unity_black", "grovez_scope_t2_unity_tan", "grovez_scope_t2_tall", "grovez_scope_t2_short", "grovez_scope_lco"}},
 	[2] = {atts = {"grovez_flashlight_surefire_m300c_scout_black", "grovez_flashlight_surefire_m300c_scout_tan", "grovez_flashlight_surefire_m300c_thorntail_black", "grovez_flashlight_surefire_m300c_thorntail_tan"}},
 
 	[40] = {default = "grovez_ak12_flashlight_position_3", atts = {"grovez_ak12_flashlight_position_1", "grovez_ak12_flashlight_position_2", "grovez_ak12_flashlight_position_3", "grovez_ak12_flashlight_position_4", "grovez_ak12_flashlight_position_5"}},
