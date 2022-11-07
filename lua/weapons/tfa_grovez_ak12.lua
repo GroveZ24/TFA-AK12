@@ -183,8 +183,10 @@ SWEP.WalkAng = Angle(1.246, 2.149, -3.468)
 SWEP.CrouchPos = Vector(-0.737, -1.323, -1.412)
 SWEP.CrouchAng = Vector(-1.119, -0.919, -5.384)
 --Inspection position
-SWEP.InspectPos = Vector(10.877, -9.705, 3.171)
-SWEP.InspectAng = Vector(47.527, 50.993, 56.782)
+--SWEP.InspectPos = Vector(10.877, -9.705, 3.171)
+--SWEP.InspectAng = Vector(47.527, 50.993, 56.782)
+SWEP.InspectPos = Vector(7.766, -13.874, -5.189)
+SWEP.InspectAng = Vector(37.527, 58.993, 10.782)
 --Safety position
 SWEP.SafetyPos = Vector(0.193, -3.734, -3.873)
 SWEP.SafetyAng = Vector(-12.733, 38.917, -40.48)
@@ -251,7 +253,7 @@ SWEP.Idle_Mode = TFA.Enum.IDLE_BOTH -- "IDLE_DISABLED" "IDLE_LUA" "IDLE_ANI" "ID
 SWEP.Sights_Mode = TFA.Enum.LOCOMOTION_HYBRID -- "LOCOMOTION_ANI" "LOCOMOTION_LUA" "LOCOMOTION_HYBRID"
 SWEP.Sprint_Mode = TFA.Enum.LOCOMOTION_ANI -- "LOCOMOTION_ANI" "LOCOMOTION_LUA" "LOCOMOTION_HYBRID"
 SWEP.Walk_Mode = TFA.Enum.LOCOMOTION_LUA -- "LOCOMOTION_ANI" "LOCOMOTION_LUA" "LOCOMOTION_HYBRID"
-SWEP.Customize_Mode = TFA.Enum.LOCOMOTION_LUA -- "LOCOMOTION_ANI" "LOCOMOTION_LUA" "LOCOMOTION_HYBRID"
+SWEP.Customize_Mode = TFA.Enum.LOCOMOTION_HYBRID -- "LOCOMOTION_ANI" "LOCOMOTION_LUA" "LOCOMOTION_HYBRID"
 --Anims itself
 SWEP.SprintAnimation = {
 	["in"] = {
@@ -267,6 +269,24 @@ SWEP.SprintAnimation = {
 	["out"] = {
 		["type"] = TFA.Enum.ANIMATION_SEQ,
 		["value"] = "ACT_VM_SPRINT_OUT",
+		["transition"] = true
+	}
+}
+
+SWEP.CustomizeAnimation = {
+	["in"] = {
+		["type"] = TFA.Enum.ANIMATION_SEQ,
+		["value"] = "ACT_VM_CUSTOMIZATIONMENU_IN",
+		["transition"] = true
+	},
+	["loop"] = {
+		["type"] = TFA.Enum.ANIMATION_SEQ,
+		["value"] = "ACT_VM_CUSTOMIZATIONMENU_LOOP",
+		["is_idle"] = true
+	},
+	["out"] = {
+		["type"] = TFA.Enum.ANIMATION_SEQ,
+		["value"] = "ACT_VM_CUSTOMIZATIONMENU_OUT",
 		["transition"] = true
 	}
 }

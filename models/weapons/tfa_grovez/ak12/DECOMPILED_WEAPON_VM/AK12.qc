@@ -343,3 +343,27 @@ $sequence "ak12_reload_empty" {
 	snap
 	fps 30
 }
+
+$sequence "ak12_customization_in" {
+	"AK12_Anims\AK12_Customization_In.smd"
+	activity "ACT_VM_CUSTOMIZATIONMENU_IN" 1
+	fadein 0.2
+	fadeout 0.2
+	fps 30
+}
+
+$sequence "ak12_customization_loop" {
+	"AK12_Anims\AK12_Customization_Loop.smd"
+	activity "ACT_VM_CUSTOMIZATIONMENU_LOOP" 1
+	fadein 0.2
+	fadeout 0.2
+	fps 30
+}
+
+$sequence "ak12_customization_out" {
+	"AK12_Anims\AK12_Customization_Out.smd"
+	activity "ACT_VM_CUSTOMIZATIONMENU_OUT" 1
+	fadein 0.2
+	fadeout 0.2
+	fps 30
+}
