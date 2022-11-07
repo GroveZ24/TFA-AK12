@@ -183,9 +183,7 @@ SWEP.WalkAng = Angle(1.246, 2.149, -3.468)
 SWEP.CrouchPos = Vector(-0.737, -1.323, -1.412)
 SWEP.CrouchAng = Vector(-1.119, -0.919, -5.384)
 --Inspection position
---SWEP.InspectPos = Vector(10.877, -9.705, 3.171)
---SWEP.InspectAng = Vector(47.527, 50.993, 56.782)
-SWEP.InspectPos = Vector(7.766, -13.874, -5.189)
+SWEP.InspectPos = Vector(8.766, -13.874, -6.189)
 SWEP.InspectAng = Vector(37.527, 58.993, 10.782)
 --Safety position
 SWEP.SafetyPos = Vector(0.193, -3.734, -3.873)
