@@ -13,3 +13,12 @@ AK-12 (6П70) for TFA Custom Base
 - Anims: Ma_rv
 - Sounds: Infinity Ward, Treyarch, Navaro, Battlestate Games, DICE, JSRS
 - lua, rigging, compile, sounds mixing: Me
+
+
+### License:
+Copyright 2022 GroveZ.
+- Modifications or Redistribution of this content without explicit permission is prohibited.
+- Commercial use of this content is strictly prohibited.
+- Unauthorized redistribution of this content will result in a DMCA.
+
+For further information and permission contact [GroveZ](https://steamcommunity.com/id/GrvZ) or [ShadowRUN](https://steamcommunity.com/id/RshaUdowN) on Steam.
