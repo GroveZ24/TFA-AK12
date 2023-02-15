@@ -8,18 +8,13 @@
 	"$blendTintByBaseAlpha"		"1"
 
 	"$envmap"					"cubemaps\fo4_dith"
-	"$envmapfresnel"			".25"
-	"$envmapcoefficient"		"[0.39 0.39 0.39]"
+	"$envmapfresnel"			".5"
+	"$envmapcoefficient"		"[ .3 .3 .3 ]"
 
 	"$phong"					"1"
-	"$phongboost"				"50"
+	"$phongboost"				"20"
 	"$phongfresnelranges"		"[0.32 0.72 0.99]"
 	"$phongalbedotint" 			"1"
-
-	"$rimlight"					"1"
-	"$rimlightexponent"			"33"
-	"$rimlightboost"			"2"
-	"$rimmask"					"1"
 
 	"Proxies"
 	{
