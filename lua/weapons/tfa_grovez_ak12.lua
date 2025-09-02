@@ -166,7 +166,7 @@ SWEP.Primary.PenetrationMultiplier = 0.05 -- Defaults to 1. The LESSER this valu
 ----[[MOBILITY]]----
 SWEP.IronSightsMoveSpeed = 0.85
 ----[[VIEWMODEL]]----
-SWEP.ViewModel = "models/weapons/tfa_grovez/ak12/c_ak12.mdl" -- Viewmodel path
+SWEP.ViewModel = "models/weapons/tfa_grovez/ak12/c_ak12_alt.mdl" -- Viewmodel path
 SWEP.ViewModelFOV = 70 -- This controls how big the viewmodel looks.  Less is more.
 SWEP.ViewModelFlip = false -- Set this to true for CSS models, or false for everything else
 SWEP.UseHands = true -- Use gmod c_arms system
@@ -183,8 +183,10 @@ SWEP.WalkAng = Angle(1.246, 2.149, -3.468)
 SWEP.CrouchPos = Vector(-0.737, -1.323, -1.412)
 SWEP.CrouchAng = Vector(-1.119, -0.919, -5.384)
 --Inspection position
-SWEP.InspectPos = Vector(8.766, -13.874, -6.189)
-SWEP.InspectAng = Vector(37.527, 58.993, 10.782)
+SWEP.InspectPos = Vector(0, 0, 0)
+SWEP.InspectAng = Vector(0, 0, 0)
+//SWEP.InspectPos = Vector(8.766, -13.874, -6.189)
+//SWEP.InspectAng = Vector(37.527, 58.993, 10.782)
 --Safety position
 SWEP.SafetyPos = Vector(0.193, -3.734, -3.873)
 SWEP.SafetyAng = Vector(-12.733, 38.917, -40.48)
